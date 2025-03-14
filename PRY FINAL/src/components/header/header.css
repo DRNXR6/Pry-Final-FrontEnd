@@ -1,0 +1,32 @@
+
+
+.Header {
+    background:url(../assets/1.jpg);
+    background-size: 100% 100%;
+    height: 500px;
+}
+
+.Header p {
+    color: lightseagreen;
+    width: 400px;
+    font-size: 25px;
+    line-height: 40px;
+    position: relative;
+    left: 200px;
+    top: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+}  
+
+.ContHeader div {
+    background-color: lightseagreen;
+    color: black;
+    font-size: 20px;
+    font-family: "Pinyon Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}

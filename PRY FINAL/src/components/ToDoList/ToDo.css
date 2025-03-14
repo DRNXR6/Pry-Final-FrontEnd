@@ -1,0 +1,461 @@
+main {
+  box-shadow: 0 0 100px #d1d1d1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, rgba(43, 43, 57, 0.658), rgb(45, 44, 44));
+
+
+    box-shadow: 0 1rem 3rem rgba(black, .175);
+    width: 60%;
+    margin: 40px auto;
+    text-align: center;
+    position: relative;
+    border-radius: 40px;
+    color: whitesmoke;
+}   
+
+main input, main button {
+    padding: 7px;
+}
+
+main button:hover {
+    box-shadow: 10px 10px 40px #d1d1d1;
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.btnAgregar {
+    background-color: darkcyan;
+    border: navajowhite;
+    padding: 15px;
+    border-radius: 20px;
+    width: 150px;
+    margin: auto;
+}
+
+.Contador {
+    position: relative;
+    left: -30%;
+    width: auto;
+    display: inline-block;
+}
+
+.btnCambioContenedor {
+  width: 200px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid whitesmoke ;
+  border-radius: 20px;
+  width: 150px;
+  margin: auto;
+  position: relative;
+  top: 35px;
+  left: 30%;
+  color: blue;
+
+
+}
+
+.btnCambioContenedor:hover {
+  transition: 0.5s;
+  transform: scale(1.05);
+
+}
+
+
+.contenedorConsultas {
+    width: 90%;
+    margin: auto;
+    overflow: auto;
+    height: 320px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.contenedorConsultasPendientes {
+    display: none;
+}
+
+.DivConsulta {
+    background-color: rgba(0, 139, 139, 0.4);
+    border-radius: 20px;
+    margin: 5px 20px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+
+
+.popup {
+  border-radius: 20px;
+  background-color: rgba(3, 5, 77, 0.727);
+  box-shadow: 0 0 40px 5px lightblue;
+}
+
+.icon {
+  background-color: rgba(153, 205, 50, 0.4);
+}
+
+.title {
+  color: darkcyan;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0;
+
+}
+
+.actions {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.btnCancel {
+  background-color: crimson;
+}
+
+.SwalTextarea {
+  background-color: transparent;
+  padding: 5px;
+  color: whitesmoke;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.SwalTextarea:focus {
+  box-shadow: 0 0 10px whitesmoke;
+  transform: scale(1.03);
+}
+
+.Mensaje {
+  transition: 0.5s;
+  background-color: rgba(245, 245, 245, 0.638);
+  font-weight: bold;
+  color: darkcyan;
+  display: inline-block;
+  padding: 0;
+  width: 70%;
+  margin: auto;
+}
+
+.Mensaje2 {
+  transition: 0.5s;
+  background-color: rgba(245, 245, 245, 0.638);
+  font-weight: bold;
+  color: darkcyan;
+  display: inline-block;
+  padding: 0;
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+
+
+
+.DivConsulta:hover {
+  margin: 10px;
+  transition: 0.1s;
+  background-color: rgba(17, 205, 205, 0.6);
+  box-shadow: 10px 10px 30px rgb(118, 112, 112);
+}
+
+.check {
+    position: relative;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+}
+.pNombre {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 20px;
+}
+
+.pConsulta {
+    width: 60%;
+    margin-left: 50px;
+    margin-top: -65px;
+    word-wrap: break-word;
+}
+
+
+.btnSalir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    border-radius: 10px;
+    border: 1px solid #F2BED1;
+    padding: 10px 0px;
+    position: relative;
+    top: -55px;
+    left: 80%;
+    width: 90px;
+    background-color: darkcyan;
+}
+
+.btnSalir > svg {
+    margin-left: 10px;
+    transition: all 0.4s ease-in;
+}
+
+.btnSalir:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(4px);
+}
+
+.btnSalir:hover {
+    box-shadow: 10px 10px 40px #d1d1d1;
+    transform: translateY(-3px);
+}
+
+
+.edit-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+    left: 80%;
+    top: -40px;
+  }
+  
+  .edit-svgIcon {
+    width: 17px;
+    transition-duration: 0.3s;
+  }
+  
+  .edit-svgIcon path {
+    fill: white;
+  }
+  
+  .edit-button:hover {
+    width: 100px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(22, 96, 121);
+    align-items: center;
+  }
+  
+  .edit-button:hover .edit-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  
+  .edit-button::before {
+    display: none;
+    content: "Editar";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+  }
+  
+  .edit-button:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+  }
+  
+
+
+
+.delete-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+    left: 80%;
+    top: -30px;
+  }
+  
+  .delete-svgIcon {
+    width: 15px;
+    transition-duration: 0.3s;
+  }
+  
+  .delete-svgIcon path {
+    fill: white;
+  }
+  
+  .delete-button:hover {
+    width: 90px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+  }
+  
+  .delete-button:hover .delete-svgIcon {
+    width: 20px;
+    transition-duration: 0.3s;
+    transform: translateY(60%);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  
+  .delete-button::before {
+    display: none;
+    content: "Delete";
+    color: white;
+    transition-duration: 0.3s;
+    font-size: 2px;
+  }
+  
+  .delete-button:hover::before {
+    display: block;
+    padding-right: 10px;
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+  }
+
+
+
+  @media (max-width:1200px) {
+    .delete-button {
+      position: relative;
+      left: 70%;
+      top: -30px;
+    }
+
+    .edit-button {
+
+      position: relative;
+      left: 70%;
+      top: -40px;
+    }
+  }
+
+  .Contador {
+    left: -20%;
+  }
+
+  .btnCambioContenedor {
+    left: 20%;
+  }
+
+  @media (max-width:880px) {
+
+    main {
+      width: 100%;
+    }
+
+    main h1 {
+        text-align: left;
+        margin-left: 20%
+    }
+    
+    .btnSalir {
+        position: relative;
+        top: -55px;
+        left: 75%;
+    }
+
+    .Contador {
+      left: -20%;
+    }
+  
+    .btnCambioContenedor {
+      left: 20%;
+    }
+
+    .pConsulta {
+        width: 45%;
+    }
+
+    .delete-button {
+        position: relative;
+        left: 65%;
+        top: -30px;
+      }
+
+      .edit-button {
+
+        position: relative;
+        left: 65%;
+        top: -40px;
+      }
+  }
+
+  @media (max-width:580px) {
+
+
+    main {
+        width: 100%;
+    }
+    main h1 {
+        text-align: left;
+        margin-left: 50px;
+    }
+
+    .Contador {
+      left: -20%;
+    }
+  
+    .btnCambioContenedor {
+      left: 20%;
+    }
+
+    .DivConsulta {
+        height: 140px;
+    }
+    
+    .btnSalir {
+        position: relative;
+        top: -55px;
+        left: 75%;
+        width: 80px;
+        height: 30px;
+    }
+
+    .pConsulta {
+        width: 80%;
+        
+    }
+
+    .edit-button {
+
+      position: relative;
+      left: 25%;
+      top: 50px;
+    }
+    .delete-button {
+        position: relative;
+        left: 55%;
+        top: 20px;
+      }
+}
+   

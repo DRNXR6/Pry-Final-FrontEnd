@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": "f905",
+      "nombre": "Darien",
+      "contraseña": "123"
+    }
+  ],
+  "consults": [
+    {
+      "usuario": "Darien",
+      "consulta": "cxcx",
+      "estado": "pendiente",
+      "id": "f4d4"
+    }
+  ]
+}

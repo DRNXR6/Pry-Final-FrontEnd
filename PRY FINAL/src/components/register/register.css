@@ -1,0 +1,51 @@
+
+.ContFormulario {
+    background-color: transparent;
+    border: solid;
+    border-style: dashed;
+    width: 30%;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    height: 100%;
+    position: relative;
+}
+
+.ContFormulario h1 {
+    color: whitesmoke;
+    border-bottom: 0.5px solid gray;
+    margin-bottom: 20px;
+}
+
+label {
+    position: relative;
+    left: 5px;
+    color: #fff;
+    font-size: 1em;
+}
+
+
+.ContFormulario input {
+    padding: 5px;
+    border: none;
+    border-bottom: solid whitesmoke;
+    background-color: transparent;
+}
+
+.ContFormulario button {
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(46, 115, 204, 0.685);
+}
+.ContFormulario button:hover {
+    transform: scale(1.2);
+    background-color: rgba(7, 255, 234, 0.5);
+    color: whitesmoke;
+}
+
+.btnPages {
+    margin-left: 5px;
+}
