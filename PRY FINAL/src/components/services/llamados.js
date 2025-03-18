@@ -22,11 +22,13 @@ async function getUsers() {
 
 //////////LLAMADO POST//////////
 
-async function postUsers(nombre,contraseña) {
+async function postUsers(nombre,email,rol,contraseña) {
     try {
      
         const userData = { 
             nombre,
+            email,
+            rol,
             contraseña        
         };
 
@@ -54,12 +56,14 @@ async function postUsers(nombre,contraseña) {
 //////////////LLAMADO UPDATE/////////////
 
 
-async function updateUsers(nombre,contraseña,id) 
+async function updateUsers(nombre,email,rol,contraseña,id) 
 {
     try {
      
         const userData = { 
-            nombre, 
+            nombre,
+            email,
+            rol,
             contraseña
         
         };

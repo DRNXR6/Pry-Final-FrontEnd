@@ -1,0 +1,72 @@
+/* 
+nav h2 {
+    grid-area: h2;
+    background-color: blue;
+    grid-row-start: span 1;
+    grid-column-start: span 1;
+}
+
+.iconsNav {
+    grid-area: iconsPerfil;
+
+}
+
+.iconsPrincipales {
+    grid-area: vender;
+
+} */
+
+/* .vender {
+    grid-area: vender;
+
+}
+
+.categorias {
+    grid-area: categorias;
+
+} */
+.navBar {
+    border: solid;
+    margin: auto;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: red;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin: auto;
+    padding: 20px;
+    gap: 10px;
+    margin-top: 200px;
+}
+
+article {
+    height: 200px;
+    border: solid;
+}
+
+article:nth-child(4) {
+    background-color: blue;
+    grid-column-start: span 2;
+}
+
+
+
+article:nth-child(8) {
+    background-color: blue;
+    grid-column-start: span 2;
+}
+
+article:nth-child(12) {
+    background-color: blue;
+    grid-column-start: span 2;
+}
+
+article:nth-child(16) {
+    background-color: blue;
+    grid-column-start: span 2;
+}

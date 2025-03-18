@@ -1,0 +1,69 @@
+
+.ContForm {
+  padding: 60px 0 46px 0;
+}
+
+.form {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 30%;
+  margin: auto;
+  background-color: rgba(165, 159, 159, 0.607);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+}
+
+.form .title {
+  color: royalblue;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input {
+  border: 1px solid rgb(219, 213, 213);
+  padding: 0px 14px;
+  border-radius: 8px;
+  width: 90%;
+  height: 50px;
+}
+
+.form textarea {
+  border-radius: 8px;
+  height: 100px;
+  width: 90%;
+  resize: none;
+  padding: 8px 14px;
+  border: 1px solid rgb(219, 213, 213);
+}
+
+
+
+.btns {
+  display: flex;
+  justify-content: right;
+  width: 90%;
+}
+
+.btnEnviar {
+  padding: 8px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: royalblue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: rgba(27, 26, 26, 0.315);
+}

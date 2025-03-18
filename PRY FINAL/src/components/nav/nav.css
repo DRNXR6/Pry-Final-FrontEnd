@@ -1,42 +1,38 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.ContNAV {
-    position: relative;
-}
 
-nav {
+.NAV {
     background-color: black;
     height: 50px;   
     display: flex;
     justify-content: space-between;
     padding: 0 50px;
-    position: fixed;
-    width: 93%;
+
 }
 
-nav div  {
+.NAV div  {
+    height: 50px;
     color: lightseagreen;
     font-family: "Kanit", sans-serif;
-    font-size: 20px;
     display: flex;
-    align-items: center;
 }
-nav ul {
+.NAV ul {
     display: flex;
-    justify-content: right;
     align-items: center;
+    height: 50px;
+
 }
 
 li {
-list-style: none;
-padding: 10px;
+    list-style: none;
+    padding: 10px;
 }
 
 li a {
-text-decoration: none;
-font-size: 17px;
-color: whitesmoke;
+    text-decoration: none;
+    font-size: 17px;
+    color: whitesmoke;
 }
 
 ul .btn {
@@ -46,18 +42,31 @@ ul .btn {
     color: whitesmoke;
     border: 1px solid;
     border-radius: 5px;
-    padding: 5px;
 }
 
-ul .button {
+
+.btnARegistrarse {
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
+    translate: 30px;
+}
+
+.btnARegistrarse:hover {
+    background-color: rgba(249, 249, 249, 0.5);
+}
+
+ul .btnAiniciarSesion {
     background-color: lightseagreen;
     height: 35px;
     border: none;
     border-radius: 10px;
     padding: 5px 10px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+
     margin-left: 30px;
 }
 
@@ -66,6 +75,3 @@ ul button:hover {
     background-color: rgba(32, 178, 171, 0.584);
 }
 
-ul .select {
-    background-color: lightseagreen;
-}

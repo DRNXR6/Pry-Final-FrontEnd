@@ -1,53 +1,42 @@
 import "./nav.css"
-// import React, { useState } from 'react'
 import React from "react"
-import {useNavigate } from 'react-router-dom'
-
-
-const navigate = useNavigate()
-// const [AlternarContenedores, setAlternarContenedores] = useState(true);
+import { Link, useNavigate } from 'react-router-dom'
 
 function Navegacion() {
   
-  // const btnCambiarContenedores = () => {
-  //   setAlternarContenedores(!AlternarContenedores);
-  // };
+  const navigate = useNavigate()
+
+  function ARegistrarse() {
+    navigate("/register")
+  }
 
   function AiniciarSesion() {
     navigate("/login")
   }
 
+
   return (
     <section>
 
     <div className='ContNAV'>
-      <nav>
+      <nav className="NAV">
         <div>
           <h2>TruequePlus</h2>
         </div>
 
-        {/* <button className='btnCambioContenedor' onClick={btnCambiarContenedores}>
-          {AlternarContenedores ? 'Ver completadas' : 'Ver pendientes'}
-        </button> */}
-
         <ul>
-          <li><button className='btn select'> Inicio</button></li>
-          <li><button className='btn'> Sobre esta web</button></li>
-          <li><button className='btn'> Contactenos</button></li>
-          <li><button onClick={AiniciarSesion} className='button' >Iniciar sesión</button></li>    
+          <li> <Link to="/"> <button className='btn'> Inicio </button> </Link> </li>  
+          <li> <Link to="/SobreWeb"> <button className='btn'> Sobre esta web</button> </Link> </li>
+          <li> <Link to="/contacto"> <button className='btn'> Contáctenos </button> </Link> </li>  
+
+          <li><button onClick={ARegistrarse} className='btnARegistrarse' >Registrase</button></li>
+          <li><button onClick={AiniciarSesion} className='btnAiniciarSesion' >Iniciar sesión</button></li>
         </ul>
+
         
       </nav>
 
     </div>
-
-    {/* {AlternarContenedores && (
-        <div>Holaa</div>
-      )}
-
-      {!AlternarContenedores && (
-        <div>Holaa2</div>
-      )} */}
 
     </section>
     

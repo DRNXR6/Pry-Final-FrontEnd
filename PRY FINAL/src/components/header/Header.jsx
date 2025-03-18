@@ -6,7 +6,6 @@ function Header() {
   return (
     <div className="ContHeader">
         <header className="Header">
-          <h1>Bienvenido</h1>
           <p>"Intercambia lo que tienes, consigue lo que necesitas."</p>
         </header>
 

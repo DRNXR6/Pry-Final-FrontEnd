@@ -1,0 +1,26 @@
+
+.ContAbout {
+    width: 100%;
+}
+
+.ContSobreWebComp {
+    margin: auto;
+    width: 65%;
+    padding: 71px;
+}
+
+.ContSobreWebComp p {
+    cursor: default;
+    line-height: 35px;
+    word-spacing: 2px;
+}
+
+.ContSobreWebComp img {
+
+    border-radius: 50%;
+    float: right;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+

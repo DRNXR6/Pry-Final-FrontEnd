@@ -6,8 +6,9 @@ import Swal from "sweetalert2"
 
 function FormRegister() {
 
-  const [nombreUsuario, SetNombreUsuario]=useState()
-  const [passwordUsuario, SetPasswordUsuario]=useState()
+  const [nombreUsuario, SetNombreUsuario]=useState("")
+  const [EmailUsuario, SetEmailUsuario]=useState("")
+  const [passwordUsuario, SetPasswordUsuario]=useState("")
   const [Usuarios, SetUsuarios]=useState()
 
   
@@ -28,69 +29,103 @@ function FormRegister() {
 
 
   function nombre(evento) {
-    SetNombreUsuario(evento.target.value)
+    SetNombreUsuario(evento.target.value.trim())
+  }
+
+  function email(evento) {
+    SetEmailUsuario(evento.target.value.trim())
   }
 
   function password(evento) {
-    SetPasswordUsuario(evento.target.value)
+    SetPasswordUsuario(evento.target.value.trim())
 
   }
 
   function btnRegistrarse() {
 
-    if(nombreUsuario == "" || passwordUsuario == "") {
+    if(nombreUsuario === "" || EmailUsuario === "" || passwordUsuario === "") {
 
-      console.log("Porfavor rellena los campos e intenta de nuevo.");
-
+      Swal.fire({
+        title: "Por favor complete los campos!",
+        icon: "info",
+      })
     }
-    else {    
     
-      const encontrado = Usuarios.filter(usuario => usuario.nombre == nombreUsuario)
+    else {  
       
-      if(encontrado.length > 0) {
-      
+      if(!(EmailUsuario.includes("@"))) {
         Swal.fire({
-          title: "El usuario ya existe, por favor ingrese otro nuevamente!",
+          title: "Porfavor ingresa un correo valido!",
           icon: "info",
-        }).then (( ) => {
-          location.reload()
         })
-      }
 
+      }
       else {
-        llamados.postUsers(nombreUsuario,passwordUsuario)
-
-
-        setTimeout(() => {
+        
+        const encontrado = Usuarios.filter(usuario => usuario.nombre == nombreUsuario)
+      
+        if(encontrado.length > 0) {
+        
           Swal.fire({
-              title: "Usuario registrado correctamente!",
-              icon: "success",
-              
+            title: "El usuario ya existe, por favor ingrese otro nuevamente!",
+            icon: "info",
           }).then (( ) => {
-            navigate("/")
+            location.reload()
           })
-          
-        }, 400);
-
+        }
+  
+        else {
+          let rol = "usuario"
+          llamados.postUsers(nombreUsuario, EmailUsuario, rol, passwordUsuario)
+  
+  
+          setTimeout(() => {
+            Swal.fire({
+                title: "Usuario registrado correctamente!",
+                icon: "success",
+                
+            }).then (( ) => {
+              navigate("/login")
+            })
+            
+          }, 400);
+  
+        }
       }
+    
+
       
     }
 
   }
 
+  function close() {
+    setTimeout(() => {
+      navigate("/")
+    }, 400);
+  }
+
   return (
-    <div className='ContFormulario'>
-      <h1>Registrarse</h1>
+    <section>
+      <div className='ContFormulario'>
+      <img onClick={close} src="bxs-x-circle.svg" alt="" />
 
-        <label htmlFor="">Nombre</label><br />
-        <input value={nombreUsuario} onChange={nombre}  type="text" /><br />
+        <h1>Registrarse</h1>
 
-        <label htmlFor="">Password</label><br />
-        <input value={passwordUsuario} onChange={password} type="password" /><br /><br />
-        <button onClick={btnRegistrarse} > Registrarse </button>
+          <label htmlFor="">Nombre</label><br />
+          <input value={nombreUsuario} onChange={nombre}  type="text" /><br />
 
-        <p>¿Ya tienes una cuenta? <Link className='btnPages' to="/"> Inicia Sesión</Link> </p>
-    </div>
+          <label htmlFor="">Email</label><br />
+          <input value={EmailUsuario} onChange={email}  type="email" /><br />
+
+          <label htmlFor="">Password</label><br />
+          <input value={passwordUsuario} onChange={password} type="password" /><br /><br />
+          <button onClick={btnRegistrarse} > Registrarse </button>
+
+          <p>¿Ya tienes una cuenta? <Link className='btnPages' to="/login"> Inicia Sesión</Link> </p>
+      </div>
+
+    </section>
   )
 }
 

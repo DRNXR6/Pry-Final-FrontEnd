@@ -3,10 +3,11 @@
 .Header {
     background:url(../assets/1.jpg);
     background-size: 100% 100%;
-    height: 500px;
+    height: 456px;
 }
 
 .Header p {
+    text-align: center;
     color: lightseagreen;
     width: 400px;
     font-size: 25px;

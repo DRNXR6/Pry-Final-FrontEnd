@@ -65,7 +65,7 @@ function FormLogin() {
       else {
   
         setTimeout(() => {
-          navigate("/home")
+          navigate("/MarketPlace")
       }, 300 )
   
       localStorage.setItem("usuarioActual", JSON.stringify(nombreUsuario));
@@ -76,20 +76,32 @@ function FormLogin() {
 
   }
 
+  function close() {
+    setTimeout(() => {
+      navigate("/")
+    }, 400);
+  }
+
   return (
-    <div className='ContFormulario2'>
-      <h1> Inicio de sesion </h1>
+    <section>
 
-        <label>Nombre</label><br/>
-        <input value={nombreUsuario} onChange={nombre}  type="text" /><br />
-        <label>Password</label><br/>
-        <input value={passwordUsuario} onChange={password} type="password" /><br /><br />
+      <div className='ContFormulario2'>
+        <img onClick={close} src="bxs-x-circle.svg" alt="" />
 
-        <button onClick={btnIniciarSesion} > Iniciar Sesion </button>
-        <p>¿No tienes una cuenta? <Link className='btnPages' to="/register"> Registrarme </Link> </p>
+        <h1> Inicio de sesion </h1>
+
+          <label>Nombre</label><br/>
+          <input value={nombreUsuario} onChange={nombre}  type="text" /><br />
+          <label>Password</label><br/>
+          <input value={passwordUsuario} onChange={password} type="password" /><br /><br />
+
+          <button onClick={btnIniciarSesion} > Iniciar Sesion </button>
+          <p>¿No tienes una cuenta? <Link className='btnPages' to="/register"> Registrarme </Link> </p>
 
 
-    </div>
+
+      </div>
+      </section>
   )
 }
 
