@@ -92,9 +92,7 @@ function FormRegister() {
   
         }
       }
-    
-
-      
+  
     }
 
   }
@@ -120,7 +118,7 @@ function FormRegister() {
 
           <label htmlFor="">Password</label><br />
           <input value={passwordUsuario} onChange={password} type="password" /><br /><br />
-          <button onClick={btnRegistrarse} > Registrarse </button>
+          <button onClick={btnRegistrarse} > Registrarse </button><br /><br />
 
           <p>¿Ya tienes una cuenta? <Link className='btnPages' to="/login"> Inicia Sesión</Link> </p>
       </div>

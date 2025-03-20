@@ -20,32 +20,81 @@
       "email": "su@",
       "rol": "usuario",
       "contraseña": "123"
+    },
+    {
+      "id": "90a7",
+      "nombre": "Holaa",
+      "email": "@",
+      "rol": "usuario",
+      "contraseña": "123"
     }
   ],
-  "comments": [
+  "comments": [],
+  "publications": [
     {
-      "id": "315c",
-      "nombre": "vhvb ",
-      "email": "cv ",
-      "comentario": "hh"
+      "id": "977b",
+      "titulo": "cxctecnologiatecnologiatecnologiatecnologiatecnologiatecnologia",
+      "categoria": "tecnologia",
+      "estado": "nuevo",
+      "descripcion": "cxcx"
+      
     },
     {
-      "id": "6941",
-      "nombre": "Darien",
-      "email": "darien",
-      "comentario": "jnjsd"
+      "id": "596f",
+      "titulo": "ds",
+      "categoria": "tecnologia",
+      "estado": "nuevo",
+      "descripcion": "dsds"
     },
     {
-      "id": "8c97",
-      "nombre": "Darien",
-      "email": "darien",
-      "comentario": "ddsds"
+      "id": "9252",
+      "titulo": "dssd",
+      "categoria": "tecnologia",
+      "estado": "comoNuevo",
+      "descripcion": "sd"
     },
     {
-      "id": "c7f9",
-      "nombre": "Darien",
-      "email": "dsds@ssd",
-      "comentario": "dds"
+      "id": "0c8e",
+      "titulo": "UGAUA",
+      "categoria": "herramientas",
+      "estado": "aceptable",
+      "descripcion": "JJJSHJSA al nds"
+    },
+    {
+      "id": "f8ff",
+      "titulo": "ds",
+      "categoria": "tecnologia",
+      "estado": "nuevo",
+      "descripcion": "dsd"
+    },
+    {
+      "id": "d389",
+      "titulo": "sdd",
+      "categoria": "hogar",
+      "estado": "comoNuevo",
+      "descripcion": "sdds"
+    },
+    {
+      "id": "3a86",
+      "titulo": "DRN",
+      "categoria": "RopaYAcce",
+      "estado": "Como_Nuevo",
+      "descripcion": "dsds"
+    },
+    {
+      "id": "7b18",
+      "titulo": "DRN",
+      "categoria": "servicios",
+      "estado": "Como Nuevo",
+      "descripcion": "xs"
+    },
+    {
+      "id": "f45c",
+      "titulo": "c",
+      "categoria": "Ropa Y Accesorios",
+      "estado": "Aceptable",
+      "descripcion": "d",
+      "NomImg": "imgs/jajaj.jpg"
     }
   ]
 }

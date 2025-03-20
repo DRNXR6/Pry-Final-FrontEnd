@@ -1,12 +1,10 @@
 import React from 'react'
-import NavMarketPlace from '../components/NavMarketPlace/NavMarketPlace'
-import Main from '../components/main/Main'
+import ContMarketPlace from '../components/ContMarketPlace/ContMarketPlace'
 
 function MarketPlace() {
   return (
     <div>
-      <NavMarketPlace/>
-      <Main/>
+      <ContMarketPlace/>
     </div>
   )
 }

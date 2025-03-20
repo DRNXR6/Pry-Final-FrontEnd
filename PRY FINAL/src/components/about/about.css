@@ -10,6 +10,7 @@
 }
 
 .ContSobreWebComp p {
+    text-align: justify;
     cursor: default;
     line-height: 35px;
     word-spacing: 2px;
@@ -21,6 +22,6 @@
     float: right;
     width: 150px;
     height: 150px;
-    margin: 5px;
+    margin: 0 10px 10px 30px;
 }
 

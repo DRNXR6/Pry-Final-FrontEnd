@@ -8,6 +8,7 @@ import Home from '../pages/Home';
 import SobreWeb from '../pages/SobreWeb';
 import Contacto from '../pages/contacto';
 import MarketPlace from '../pages/MarketPlace';
+import DetailsPage from '../pages/DetailsPage';
 
 function Routing() {
 
@@ -23,7 +24,9 @@ function Routing() {
             <Route path="/login" element={<Login/>}/>
             
             <Route path="/MarketPlace" element={<MarketPlace/>}/>
-                     
+
+            <Route path="/details" element={<DetailsPage/>}/>
+
         </Routes>
       </Router>
     </div>

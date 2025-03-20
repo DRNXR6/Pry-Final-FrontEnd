@@ -95,7 +95,7 @@ function FormLogin() {
           <label>Password</label><br/>
           <input value={passwordUsuario} onChange={password} type="password" /><br /><br />
 
-          <button onClick={btnIniciarSesion} > Iniciar Sesion </button>
+          <button onClick={btnIniciarSesion} > Iniciar Sesion </button><br /><br /> 
           <p>¿No tienes una cuenta? <Link className='btnPages' to="/register"> Registrarme </Link> </p>
 
 

@@ -84,3 +84,97 @@ button:hover, input:focus, svg:hover, img:hover{
     color: whitesmoke;
 }
 
+
+
+.ItemBtnPublic {
+    margin: 15px;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 10px;
+    padding: 7px 10px;
+}
+
+.swal2-input {
+    height: 20px;
+    background-color: transparent;
+}
+
+
+.swal2-select {
+    width: 250px;
+    border: 0.1px solid gray;
+    border-radius: 5px;
+}
+
+.SwalTextarea {
+    background-color: transparent;
+    padding: 10px;
+    height: 100px;
+    width: 250px;
+    color: whitesmoke;
+    font-size: 15px;
+    border-radius: 10px;
+    color: black;
+  }
+  
+  .SwalTextarea:focus {
+    box-shadow: 0 0 10px whitesmoke;
+    transform: scale(1.03);
+  }
+
+
+.ContIPublications {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+}
+
+.ItemCard {
+    width: 100%;
+    border-radius: 10px;
+    border: solid;
+    padding: 20px;
+}
+
+.ItemCard:hover {
+    transform: scale(1.03);
+}
+
+.imgCard {
+    border: solid yellow;
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+
+}
+
+.pTitle {
+    margin: auto;
+    width: 190px;
+    height: 20px;
+    overflow: hidden;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.popup {
+    background-color: transparent;
+}
+
+.icon {
+    height: 200px;
+}
+
+
+/* .ItemCard:nth-child(1) {
+    border: solid;
+    grid-row-start: span 3;
+    grid-column-start: span 2;
+} */
+
+
+
