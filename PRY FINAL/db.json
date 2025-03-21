@@ -27,74 +27,47 @@
       "email": "@",
       "rol": "usuario",
       "contraseña": "123"
+    },
+    {
+      "id": "f983",
+      "nombre": "ds",
+      "email": "dsd@",
+      "rol": "usuario",
+      "contraseña": "cx"
+    },
+    {
+      "id": "1c87",
+      "nombre": "sd",
+      "email": "ds@",
+      "rol": "usuario",
+      "contraseña": "s"
     }
   ],
   "comments": [],
   "publications": [
     {
-      "id": "977b",
-      "titulo": "cxctecnologiatecnologiatecnologiatecnologiatecnologiatecnologia",
-      "categoria": "tecnologia",
-      "estado": "nuevo",
-      "descripcion": "cxcx"
-      
-    },
-    {
-      "id": "596f",
+      "id": "40d8",
       "titulo": "ds",
       "categoria": "tecnologia",
-      "estado": "nuevo",
-      "descripcion": "dsds"
-    },
-    {
-      "id": "9252",
-      "titulo": "dssd",
-      "categoria": "tecnologia",
-      "estado": "comoNuevo",
-      "descripcion": "sd"
-    },
-    {
-      "id": "0c8e",
-      "titulo": "UGAUA",
-      "categoria": "herramientas",
-      "estado": "aceptable",
-      "descripcion": "JJJSHJSA al nds"
-    },
-    {
-      "id": "f8ff",
-      "titulo": "ds",
-      "categoria": "tecnologia",
-      "estado": "nuevo",
-      "descripcion": "dsd"
-    },
-    {
-      "id": "d389",
-      "titulo": "sdd",
-      "categoria": "hogar",
-      "estado": "comoNuevo",
-      "descripcion": "sdds"
-    },
-    {
-      "id": "3a86",
-      "titulo": "DRN",
-      "categoria": "RopaYAcce",
-      "estado": "Como_Nuevo",
-      "descripcion": "dsds"
-    },
-    {
-      "id": "7b18",
-      "titulo": "DRN",
-      "categoria": "servicios",
-      "estado": "Como Nuevo",
-      "descripcion": "xs"
-    },
-    {
-      "id": "f45c",
-      "titulo": "c",
-      "categoria": "Ropa Y Accesorios",
       "estado": "Aceptable",
-      "descripcion": "d",
-      "NomImg": "imgs/jajaj.jpg"
+      "descripcion": "dd",
+      "imgName": "./uploads/efcf1891874f8b4688a676289ef69382.png"
+    },
+    {
+      "id": "3f9d",
+      "titulo": "DRN",
+      "categoria": "tecnologia",
+      "estado": "Nuevo",
+      "descripcion": "cxcx",
+      "imgName": "./uploads/fondo ice age.jpg"
+    },
+    {
+      "id": "302f",
+      "titulo": "Epson",
+      "categoria": "servicios",
+      "estado": "Nuevo",
+      "descripcion": "dsdsds",
+      "imgName": "./uploads/trueque.webp"
     }
   ]
 }

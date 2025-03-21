@@ -99,6 +99,9 @@ button:hover, input:focus, svg:hover, img:hover{
     background-color: transparent;
 }
 
+.inputFile {
+    width: 200px;
+}
 
 .swal2-select {
     width: 250px;
@@ -169,12 +172,124 @@ button:hover, input:focus, svg:hover, img:hover{
     height: 200px;
 }
 
+.form-group {
+    background-color: whitesmoke;
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
 
-/* .ItemCard:nth-child(1) {
-    border: solid;
-    grid-row-start: span 3;
-    grid-column-start: span 2;
-} */
+}
+
+
+  .form-container {
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 7px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+  }
+  
+  .input-field:focus {
+    border-color: darkcyan;
+    outline: none;
+    background-color: transparent;
+
+  }
+  
+  textarea.input-field {
+    resize: none;
+    min-height: 100px;
+    color: darkcyan;
+
+  }
+  
+  select.input-field {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #f9f9f9;
+    color: darkcyan;
+
+    padding-right: 20px; /* Space for the dropdown arrow */
+  }
+  
+  button.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: darkcyan;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.submit-button:hover {
+    background-color: rgb(8, 192, 192);
+  }
+  
+  button.submit-button:active {
+    background-color: rgb(8, 192, 192);
+  }
+  
+  input[type="file"] {
+    border: none;
+    background-color: #f9f9f9;
+    padding: 12px;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+  }
+  
+  input[type="file"]:hover {
+    background-color: #f1f1f1;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  form p {
+    color: #f44336;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .form-group {
+    width: 70%;
+    padding: 0px;
+    margin-top: -10px;
+  }
+
 
 
 

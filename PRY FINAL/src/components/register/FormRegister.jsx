@@ -64,6 +64,7 @@ function FormRegister() {
         
         const encontrado = Usuarios.filter(usuario => usuario.nombre == nombreUsuario)
       
+        
         if(encontrado.length > 0) {
         
           Swal.fire({

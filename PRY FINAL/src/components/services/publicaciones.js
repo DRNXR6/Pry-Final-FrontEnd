@@ -22,14 +22,15 @@ async function getPublications() {
 
 //////////LLAMADO POST//////////
 
-async function postPublications(titulo,categoria,estado,descripcion) {
+async function postPublications(titulo,categoria,estado,descripcion, imgName) {
     try {
      
         const publicationData = { 
             titulo,
             categoria,
             estado,
-            descripcion
+            descripcion,
+            imgName
            
         };
 
@@ -57,7 +58,7 @@ async function postPublications(titulo,categoria,estado,descripcion) {
 //////////////LLAMADO UPDATE/////////////
 
 
-async function updatePublications(titulo,categoria,estado,descripcion,id) 
+async function updatePublications(titulo,categoria,estado,descripcion,imgName,id) 
 {
     try {
      
@@ -65,8 +66,8 @@ async function updatePublications(titulo,categoria,estado,descripcion,id)
             titulo,
             categoria,
             estado,
-            descripcion
-        
+            descripcion,
+            imgName
         
         };
 

@@ -38,11 +38,15 @@ function Details() {
 
                             </div>
 
+                        <img src={publication.img} alt="" /><br /><br />
+
                         <p className='pTitleDetails'>{publication.titulo} </p>
 
                         <p className='pTitleCategory'>{publication.categoria} </p>
                         <p className='pStateDetails'>{publication.estado} </p>
                         <p className='pDescriptionDetails'>{publication.descripcion} </p>
+
+                        <p className='pDescriptionDetails'>{publication.img} </p>
 
                         </button >
 

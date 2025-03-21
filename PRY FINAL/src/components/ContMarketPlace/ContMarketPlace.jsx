@@ -1,95 +1,37 @@
-import "./ContMarketPlace.css"
-import {Link, useNavigate} from "react-router-dom"
-import React, { useState, useEffect } from 'react'
+import "./ContMarketPlace.css";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import Swal from "sweetalert2";
 import publicaciones from "../services/publicaciones";
 
 function ContMarketPlace() {
+    const [Publications, SetPublications] = useState([]);
 
-    const [Publications, SetPublications]=useState([])
-    
-    const navigate = useNavigate()
+    const [image, setImage] = useState(null);
+    const [message, setMessage] = useState('');
+    const [titulo, setTitulo] = useState('');
+    const [categoria, setCategoria] = useState('');
+    const [estado, setEstado] = useState('');
+    const [descripcion, setDescripcion] = useState('');
+
+
+    const navigate = useNavigate();
 
     useEffect(() => {
-      
-      async function fetchDataUsers() {
-        
-        const Datos = await publicaciones.getPublications()
-  
-        console.log(Datos);
-        
-        SetPublications(Datos)
-      };
-  
-      fetchDataUsers()
-  
-    }, [])
-    
+        async function fetchDataUsers() {
+            const Datos = await publicaciones.getPublications();
+            SetPublications(Datos);
+        };
+        fetchDataUsers();
+    }, []);
 
-    async function btnPublic() {
-        const { value: formValues } = await Swal.fire({
-          title: "Crear Publicación",
-          html: `
-            <input id="titulo" class="swal2-input" placeholder="Títúlo"><br>
-      
-            <select id="categoria" class="swal2-select">
-              <option value=""> Categoria </option>
-              <option value="tecnologia"> Tecnología </option>
-              <option value="hogar"> Hogar </option>
-              <option value="Ropa Y Accesorios"> Ropa y Accesorios </option>
-              <option value="herramientas"> Herramientas </option>
-              <option value="libros"> Libros y materiales de estudio</option>
-              <option value="servicios"> Servicios</option>
-              <option value="deportes"> Deporte</option>
-              <option value="arte"> Arte</option>
-              <option value="juguetes"> Juguetes y entretenimiento</option>
-            </select><br>
-      
-            <select id="estado" class="swal2-select">
-              <option value=""> Estado </option>
-              <option value="Nuevo"> Nuevo </option>
-              <option value="Como Nuevo"> Usado - Como nuevo </option>
-              <option value="Aceptable"> Usado - Aceptable </option>
-            </select><br><br>      
-            <textarea id="descripcion" class="SwalTextarea" placeholder="Descripción"></textarea><br><br>
-     
-          `,
-          focusConfirm: false,
-          showCancelButton: true,
-          cancelButtonText: "Cancelar",
-          confirmButtonText: "Publicar",
-          preConfirm: () => {
-            let titulo = document.getElementById("titulo").value;
-            let categoria = document.getElementById("categoria").value;
-            let estado = document.getElementById("estado").value;
-            let descripcion = document.getElementById("descripcion").value;
-            
-            if (titulo == "" || categoria == "" || estado == "" || descripcion == "") {
-              Swal.showValidationMessage("Por favor complete todos los campos");
-              return false; // Evita la confirmación si los campos están vacíos
-            }
-      
-            return { titulo, categoria, estado, descripcion };
-          }
-        });
-      
-        // Si no se canceló el formulario, procesamos los datos
-        if (formValues) {
-          const { titulo, categoria, estado, descripcion } = formValues;
-      
-          console.log("Titulo:", titulo);
-          console.log("Categoria:", categoria);
-          console.log("Estado:", estado);
-          console.log("Descripcion:", descripcion);
-      
-          publicaciones.postPublications(titulo, categoria, estado, descripcion);
+  
 
-        }
-      }
-      
+    function btnPublic() {
+      // Mostrar el form Publications
+    }
 
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
@@ -98,14 +40,54 @@ function ContMarketPlace() {
     };
 
     function FunctionDetails(id) {
-      setTimeout(() => {
-        
-        localStorage.setItem("IdItem",JSON.stringify(id))
-
-        navigate("/details")
-      }, 100);
+        setTimeout(() => {
+            localStorage.setItem("IdItem", JSON.stringify(id));
+            navigate("/details");
+        }, 100);
     }
 
+
+    const handleFileChange = (e) => {
+      setImage(e.target.files[0]);
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      if (!image) {
+        setMessage('Por favor selecciona una imagen primero.');
+        return;
+      }
+  
+      const formData = new FormData();
+      formData.append('image', image);
+  
+      try {
+        const response = await fetch('http://localhost:3001/upload', {
+          method: 'POST',
+          body: formData,
+        });
+  
+        const data = await response.json();
+        if (response.ok) {
+          setMessage(`Archivo subido correctamente: ${data.filename}`);
+        } else {
+          setMessage('Error al subir el archivo.');
+        }
+      } catch (error) {
+        console.error(error);
+        setMessage('Error al subir el archivo.');
+      }
+    };
+
+    async function bntPublic() {
+      
+      
+      let imgUrl ="./uploads/" + image.name;
+  
+      publicaciones.postPublications(titulo, categoria, estado, descripcion, imgUrl);
+      
+    }
 
     return (
         <section>
@@ -121,11 +103,10 @@ function ContMarketPlace() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-down-short" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4"/>
                     </svg>
-                    
                 </button>
 
                 <ul className={`dropdown-menu ${isDropdownVisible ? 'show' : ''}`}>
-                    <li> <Link to={"/login"}> Tecnología </Link> </li>
+                    <li><Link to={"/login"}>Tecnología</Link></li>
                     <li>Hogar</li>
                     <li>Ropa y Accesorios</li>
                     <li>Herramientas</li>
@@ -145,45 +126,78 @@ function ContMarketPlace() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-bookmark" viewBox="0 0 16 16">
                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
                     </svg>  
-
                 </div>
-
             </nav>
 
-
-
             <main className='ContIPublications'>
-        
-                {(
-
-                  Publications.map((publication, index) => (
-            
-                  <article key={index}  >
-
-                  
-                    <button  className="ItemCard" onClick={e => FunctionDetails(publication.id)}>
-                        
-                        <div className="imgCard">
-
-                        </div>
-
-                      <p className='pTitle'>{publication.titulo} </p>
-                      <img src="{publication.NomImg}" alt="" />
-
-                    </button >
-
-                  </article>
-
-
-                  ))
-
-                )}      
-
+                {Publications.map((publication, index) => (
+                    <article key={index}>
+                        <button className="ItemCard" onClick={() => FunctionDetails(publication.id)}>
+                            <img className="imgCard" src={publication.imgName} alt="" />
+                            <p className='pTitle'>{publication.titulo}</p>
+                        </button>
+                    </article>
+                ))}
             </main>
-           
 
+            <div className="FormContPrincipal">
+              <div className="form-container">
+                <h2>Crear Publicación</h2>
+
+                <form onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="titulo">Título:</label>
+                    <input type="text" id="titulo"value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Título" required className="input-field"/>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="categoria">Categoría:</label>
+                    <select id="categoria" value={categoria} onChange={(e) => setCategoria(e.target.value)} required className="input-field">
+                      <option value="">Selecciona una categoría</option>
+                      <option value="tecnologia">Tecnología</option>
+                      <option value="hogar">Hogar</option>
+                      <option value="ropa-y-accesorios">Ropa y Accesorios</option>
+                      <option value="herramientas">Herramientas</option>
+                      <option value="libros">Libros y materiales de estudio</option>
+                      <option value="servicios">Servicios</option>
+                      <option value="deportes">Deporte</option>
+                      <option value="arte">Arte</option>
+                      <option value="juguetes">Juguetes y entretenimiento</option>
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="estado">Estado:</label>
+                    <select id="estado" value={estado} onChange={(e) => setEstado(e.target.value)} required className="input-field">
+                      <option value="">Selecciona un estado</option>
+                      <option value="Nuevo">Nuevo</option>
+                      <option value="Como Nuevo">Usado - Como nuevo</option>
+                      <option value="Aceptable">Usado - Aceptable</option>
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="descripcion">Descripción:</label>
+                    <textarea id="descripcion" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder="Descripción" required className="input-field"/>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="fileInput">Seleccionar imagen:</label>
+                    <input id="fileInput" type="file" accept="image/*" onChange={handleFileChange} required className="input-field"/>
+                      
+                      
+                      
+                  </div>
+
+                  <button onClick={bntPublic} type="submit" className="submit-button">Publicar</button>
+                </form>
+              </div>
+
+            </div>
+            
         </section>
     );
 }
 
 export default ContMarketPlace;
+
