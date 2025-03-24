@@ -31,7 +31,7 @@ const storage = multer.diskStorage({
     // Verificar si el archivo ya existe y agregar un número al nombre si es necesario
     while (fs.existsSync(path.join('./uploads', filename))) {
       // Si el archivo ya existe, agregamos (n) al nombre
-      filename = `${originalName}(${counter})${ext}`;
+      filename = `${originalName}${ext}(${counter})`;
       counter++; // Incrementamos el contador para la siguiente iteración
     }
 

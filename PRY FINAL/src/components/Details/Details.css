@@ -1,0 +1,121 @@
+
+.ItemCardDetails {
+    width: 100%;
+    display: flex;
+    background-color: gray;
+    padding: 50px;
+    gap: 50px;
+}
+
+.HeaderDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stars {
+    display: flex;
+    gap: 5px;
+    font-size: 20px;
+}
+
+.imgDetails {
+    width: 500px;
+    height: 500px;
+    object-fit: 100%;
+    border-radius: 10px;
+    border: solid;
+}
+
+.ContPDetails {
+    padding: 0 50px 50px 50px;
+    border: solid;
+    width: 80%;
+    border-radius: 10px;
+    max-height: 500px;
+    overflow: auto;
+
+}
+
+.ContPDetails p {
+    word-wrap: break-word;
+    max-width: 500px;
+}
+
+.pDateDetails {
+    text-align: left;
+    margin-top: -10px;
+}
+
+.pStateDetails {
+    text-align: left;
+    margin-top: -10px;
+}
+
+.ContSendsms {
+    border: 0.1px solid;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: -10px -10px 10px 0 rgb(156, 153, 153),
+        10px 10px 10px 0 rgb(156, 153, 153),;
+    background-color: gray;
+    margin: 20px 0;
+}
+
+
+.SendSms {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+
+.SendSms input {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 20px;
+    background-color: whitesmoke;
+    border: none;
+}
+
+.SendSms button {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid;
+    background-color: darkcyan;
+}
+
+.pDescriptionDetails {
+    margin-top: -10px;
+    border: solid 1px;
+    border-left: none;
+    border-right: none;
+    text-align: left;
+    padding: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: right;
+    margin: 20px 0;
+    gap: 10px   ;
+}
+
+.actions button {
+  
+    background-color: darkcyan;
+    border: none;
+}
+
+.actions button:hover {
+    transform: scale(1.2);
+}
+
+
+.actions button .actions svg:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+}

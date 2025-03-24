@@ -18,7 +18,7 @@
     align-items: center;
 }
 
-.dropdown-center button {
+.dropdown-center .btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,13 +30,12 @@
     padding: 0 10px;
 }
 
-.Profil svg {
-    margin-right: 10px;
+.dropdown-center .btn:hover {
+  background-color: gray;
 }
 
-.dropdown-cont:hover .dropdown-menu {
-    display: block;
-    
+.Profil svg {
+    margin-right: 10px;
 }
 
 .dropdown-menu {
@@ -48,30 +47,6 @@
     z-index: 1000;
     box-shadow: 0 0 5px black;
     overflow: auto;
-}
-
-.dropdown-menu:hover {
-    display: block;
-}
-
-.dropdown-menu li {
-    cursor: pointer;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-}
-
-.dropdown-menu li:hover {
-    background-color: rgba(6, 113, 131, 0.463);
-}
-
-button:hover, input:focus{
-    background-color: gray;
-}
-
-button:hover, input:focus, svg:hover, img:hover{
-    transform: scale(1.05);
-
 }
 
 .dropdown-center input {
@@ -135,11 +110,15 @@ button:hover, input:focus, svg:hover, img:hover{
     width: 80%;
 }
 
+
 .ItemCard {
     width: 100%;
+    height: 300px;
     border-radius: 10px;
-    border: solid;
     padding: 20px;
+    border: solid yellow;
+    background-color: transparent;
+
 }
 
 .ItemCard:hover {
@@ -147,10 +126,9 @@ button:hover, input:focus, svg:hover, img:hover{
 }
 
 .imgCard {
-    border: solid yellow;
     border-radius: 10px;
     width: 100%;
-    height: 200px;
+    height: 220px;
     margin-bottom: 10px;
 
 }
@@ -162,6 +140,7 @@ button:hover, input:focus, svg:hover, img:hover{
     overflow: hidden;
     text-align: center;
     word-wrap: break-word;
+  
 }
 
 .popup {
@@ -184,12 +163,12 @@ button:hover, input:focus, svg:hover, img:hover{
 
   .form-container {
     background-color: whitesmoke;
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
-    margin: 0 auto;
+    margin: 40px auto;
 
   }
   
@@ -239,7 +218,7 @@ button:hover, input:focus, svg:hover, img:hover{
     padding-right: 20px; /* Space for the dropdown arrow */
   }
   
-  button.submit-button {
+  .submit-button {
     width: 100%;
     padding: 10px;
     background-color: darkcyan;
@@ -251,11 +230,7 @@ button:hover, input:focus, svg:hover, img:hover{
     transition: background-color 0.3s ease;
   }
   
-  button.submit-button:hover {
-    background-color: rgb(8, 192, 192);
-  }
-  
-  button.submit-button:active {
+  .submit-button:hover {
     background-color: rgb(8, 192, 192);
   }
   

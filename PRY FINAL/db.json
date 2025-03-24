@@ -46,28 +46,34 @@
   "comments": [],
   "publications": [
     {
-      "id": "40d8",
-      "titulo": "ds",
-      "categoria": "tecnologia",
-      "estado": "Aceptable",
-      "descripcion": "dd",
-      "imgName": "./uploads/efcf1891874f8b4688a676289ef69382.png"
-    },
-    {
-      "id": "3f9d",
-      "titulo": "DRN",
+      "id": "1876",
+      "titulo": "cx",
+      "fecha": "24/03/2025, 14:52",
+      "calificacion": 1,
       "categoria": "tecnologia",
       "estado": "Nuevo",
-      "descripcion": "cxcx",
-      "imgName": "./uploads/fondo ice age.jpg"
+      "descripcion": "c",
+      "imgName": "uploads/descarga 12.jfif"
     },
     {
-      "id": "302f",
-      "titulo": "Epson",
-      "categoria": "servicios",
-      "estado": "Nuevo",
-      "descripcion": "dsdsds",
-      "imgName": "./uploads/trueque.webp"
+      "id": "0098",
+      "titulo": "cx",
+      "fecha": "24/03/2025, 14:55",
+      "calificacion": 2,
+      "categoria": "herramientas",
+      "estado": "Como Nuevo",
+      "descripcion": "xcxc",
+      "imgName": "uploads/descarga 12(1).jfif"
+    },
+    {
+      "id": "ceae",
+      "titulo": "cx",
+      "fecha": "24/03/2025, 15:42",
+      "calificacion": 3,
+      "categoria": "ropa-y-accesorios",
+      "estado": "Como Nuevo",
+      "descripcion": "xc",
+      "imgName": "uploads/fondo ice age.jpg"
     }
   ]
 }

@@ -25,6 +25,8 @@ function Routing() {
             
             <Route path="/MarketPlace" element={<MarketPlace/>}/>
 
+            
+
             <Route path="/details" element={<DetailsPage/>}/>
 
         </Routes>

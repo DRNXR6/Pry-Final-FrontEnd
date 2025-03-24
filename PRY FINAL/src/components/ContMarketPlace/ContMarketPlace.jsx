@@ -16,6 +16,8 @@ function ContMarketPlace() {
     const [estado, setEstado] = useState('');
     const [descripcion, setDescripcion] = useState('');
 
+    const [AlternarContenedores, setAlternarContenedores] = useState(true);
+  
 
     const navigate = useNavigate();
 
@@ -27,11 +29,6 @@ function ContMarketPlace() {
         fetchDataUsers();
     }, []);
 
-  
-
-    function btnPublic() {
-      // Mostrar el form Publications
-    }
 
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
@@ -80,20 +77,115 @@ function ContMarketPlace() {
       }
     };
 
-    async function bntPublic() {
+    function bntPublic() {
       
       
-      let imgUrl ="./uploads/" + image.name;
-  
-      publicaciones.postPublications(titulo, categoria, estado, descripcion, imgUrl);
-      
-    }
+      // let imgUrl ="./uploads/" + image.name;
 
+
+      // Publications.filter((publication => publication.imgName == imgUrl)).map((Publications) => {
+      //   let counter = 1;
+
+      //   if(imgUrl == Publications.imgName){
+
+      //     let filename = `${image.name}(${counter})`;
+      //     console.log(filename);
+      //   }
+      
+      // })
+
+      
+      let [nameIMG, extIMG] = image.name.split("."); 
+
+      let NameImgComplete = image.name;
+
+      let NameImg = nameIMG;
+      let ExtImg = extIMG;
+
+      console.log("NameImg " + NameImg);
+      console.log("ExtImg " + ExtImg);
+      console.log("NameImgComplete " + NameImgComplete)
+
+      let IMGExistente = false;
+      let counterExist = false;
+
+      let counter = 1;
+      let NewCounter = 1;
+      let imgUrl = "";
+
+
+      Publications.map((publication) => {
+        
+        if (publication.imgName.includes(image.name) && publication.imgName.includes("(")) {    //Con (n)
+          
+          let [nameNoCounter, counterE] = publication.imgName.split("("); 
+
+          NameImg = nameNoCounter;
+          
+
+          let NumINT = counterE.match(/\d+/g);
+          
+          let Num = NumINT.map(num => parseInt(num, 10)); 
+          
+          NewCounter = (Num.length > 0 ? Num[0] : 0) + 1;
+          console.log("NewCounter " + NewCounter);
+          
+          IMGExistente = true;
+          counterExist = true;
+        }
+
+        else if(counterExist == false && publication.imgName.includes(image.name) ){ //Sin (n)          
+          IMGExistente = true;
+
+        }
+
+        // else {  //No hay
+        //   NomIMGExistente = image.name;
+          
+        // }
+
+        
+      })
+      
+      if(IMGExistente == true && counterExist == true){
+      
+        imgUrl = "uploads/" + NameImg + "(" + NewCounter + ")" + "." + ExtImg;
+        console.log("imgUrl " + imgUrl);
+
+      }
+
+      else if (IMGExistente == true) {
+
+        imgUrl ="uploads/" + NameImg + "(" + counter + ")" + "." + ExtImg;
+        counter++;
+
+      }
+      else {
+
+        imgUrl = "uploads/" + image.name
+        counter++;
+
+      }
+
+      let fecha = new Date().toLocaleString('es-ES', { hour12: false, second: '2-digit', minute: '2-digit', hour: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }).slice(0, -3);
+      let calificacion = 0;
+      publicaciones.postPublications(titulo,fecha,calificacion, categoria, estado, descripcion, imgUrl);
+
+  }
+  
+  const btnCambiarContenedores = () => {
+    setAlternarContenedores(!AlternarContenedores);
+  };
+  
     return (
         <section>
             <nav className="dropdown-center">
                 <h2>TruequePlus</h2>
-                <button onClick={btnPublic}>Publicar</button>
+
+                <button className='btn btnCambioContenedor' onClick={btnCambiarContenedores}>
+                  {AlternarContenedores} Publicar
+                </button>
+
                 <button
                     className="btn btn-secondary"
                     type="button"
@@ -123,26 +215,36 @@ function ContMarketPlace() {
                         <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
                     </svg>
 
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-bookmark" viewBox="0 0 16 16">
-                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
-                    </svg>  
+                     
                 </div>
             </nav>
 
-            <main className='ContIPublications'>
-                {Publications.map((publication, index) => (
-                    <article key={index}>
-                        <button className="ItemCard" onClick={() => FunctionDetails(publication.id)}>
-                            <img className="imgCard" src={publication.imgName} alt="" />
-                            <p className='pTitle'>{publication.titulo}</p>
-                        </button>
-                    </article>
-                ))}
-            </main>
+            {AlternarContenedores && (
+
+              <main className='ContIPublications'>
+                  {Publications.map((publication, index) => (
+                      <article key={index}>
+                          <button className="ItemCard" onClick={() => FunctionDetails(publication.id)}>
+                              <img className="imgCard" src={publication.imgName} alt="" />
+                              <p className='pTitle'>{publication.titulo}</p>
+                          </button>
+                      </article>
+                  ))}
+              </main>
+            )}
+
+          {!AlternarContenedores && (
+
 
             <div className="FormContPrincipal">
               <div className="form-container">
-                <h2>Crear Publicación</h2>
+                <h2>Crear Publicación</h2><br />
+                
+
+                <div className="form-group">
+                    <label htmlFor="fileInput">Seleccionar imagen:</label>
+                    <input id="fileInput" type="file" accept="image/*" onChange={handleFileChange} required className="input-field"/>
+                </div><br />
 
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
@@ -181,20 +283,13 @@ function ContMarketPlace() {
                     <textarea id="descripcion" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} placeholder="Descripción" required className="input-field"/>
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="fileInput">Seleccionar imagen:</label>
-                    <input id="fileInput" type="file" accept="image/*" onChange={handleFileChange} required className="input-field"/>
-                      
-                      
-                      
-                  </div>
 
                   <button onClick={bntPublic} type="submit" className="submit-button">Publicar</button>
                 </form>
               </div>
 
             </div>
-            
+          )}
         </section>
     );
 }
