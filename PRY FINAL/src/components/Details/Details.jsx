@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import publicaciones from '../services/publicaciones';
 import "./Details.css"
+import Swal from 'sweetalert2'
+
 function Details() {
 
 
     const IdItem = JSON.parse(localStorage.getItem("IdItem"));
     const [Publications, SetPublications]=useState([])
+    const [Calif, SetCalif]=useState()
+
     let calificacion = "";
 
 
@@ -23,6 +27,48 @@ function Details() {
     
     }, [])
 
+    
+    function FnCalificar(id, calificacionDada) {
+        
+        console.log(calificacionDada);
+        
+    }
+
+    function btnCalificar(id) {
+
+        Swal.fire({
+            title: "Calificar",
+            html: `
+            <button id="BtnCalif1" >⭐</button>
+            <button id="BtnCalif2" >⭐</button>
+            <button id="BtnCalif3" >⭐</button>
+            <button id="BtnCalif4" >⭐</button>
+            <button id="BtnCalif5" >⭐</button>
+            `,
+
+            showCancelButton: true,
+            showConfirmButton: false,
+            
+            preConfirm: () => {
+
+
+                const BtnCalif1 = document.getElementById('BtnCalif1');
+                const BtnCalif2 = document.getElementById('BtnCalif2');
+                const BtnCalif3 = document.getElementById('BtnCalif3');
+                const BtnCalif4 = document.getElementById('BtnCalif4');
+                const BtnCalif5 = document.getElementById('BtnCalif5');
+
+                BtnCalif1.addEventListener('click', () => {
+
+                })
+
+                FnCalificar(id, calificacion)
+   
+                return { BtnCalif1, BtnCalif2, BtnCalif3, BtnCalif4, BtnCalif5 };
+            }
+
+          })
+    }
 
     for (let index = 0; index < Publications.length; index++) {
         const element = Publications[index];
@@ -81,7 +127,7 @@ function Details() {
                                     </div>
 
                                     <div className="actions">
-                                        <button className="Calificar">Calificar</button>
+                                        <button onClick={e => btnCalificar(publication.id)} className="Calificar">Calificar</button>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-bookmark" viewBox="0 0 16 16">
                                             <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
                                         </svg> 

@@ -6,7 +6,7 @@ function Footer() {
     <div className='ContFooter'>
 
 
-      <footer>
+      <footer className='Footer'>
         <h2>Derechos Reservados | Darien Aguilar 2025</h2>
       </footer>
 

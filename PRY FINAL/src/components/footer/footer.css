@@ -4,7 +4,7 @@
     color: whitesmoke;
 }
 
-Footer {
+.Footer {
     height: 60px;
     font-family: "Lavishly Yours", cursive;
     display: flex;

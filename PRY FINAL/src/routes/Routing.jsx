@@ -9,6 +9,8 @@ import SobreWeb from '../pages/SobreWeb';
 import Contacto from '../pages/contacto';
 import MarketPlace from '../pages/MarketPlace';
 import DetailsPage from '../pages/DetailsPage';
+import Edit from '../pages/Edit';
+
 
 function Routing() {
 
@@ -24,9 +26,10 @@ function Routing() {
             <Route path="/login" element={<Login/>}/>
             
             <Route path="/MarketPlace" element={<MarketPlace/>}/>
+            <Route path="/edit" element={<Edit/>}/>
 
-            
 
+          
             <Route path="/details" element={<DetailsPage/>}/>
 
         </Routes>

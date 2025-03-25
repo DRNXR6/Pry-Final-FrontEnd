@@ -60,7 +60,7 @@ async function postPublications(titulo,fecha,calificacion,categoria,estado,descr
 //////////////LLAMADO UPDATE/////////////
 
 
-async function updatePublications(titulo,fecha,calificacion,categoria,estado,descripcion,imgName,id) 
+async function updatePublications(id,titulo,fecha,calificacion,categoria,estado,descripcion,imgName) 
 {
     try {
      

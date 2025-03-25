@@ -45,35 +45,6 @@
   ],
   "comments": [],
   "publications": [
-    {
-      "id": "1876",
-      "titulo": "cx",
-      "fecha": "24/03/2025, 14:52",
-      "calificacion": 1,
-      "categoria": "tecnologia",
-      "estado": "Nuevo",
-      "descripcion": "c",
-      "imgName": "uploads/descarga 12.jfif"
-    },
-    {
-      "id": "0098",
-      "titulo": "cx",
-      "fecha": "24/03/2025, 14:55",
-      "calificacion": 2,
-      "categoria": "herramientas",
-      "estado": "Como Nuevo",
-      "descripcion": "xcxc",
-      "imgName": "uploads/descarga 12(1).jfif"
-    },
-    {
-      "id": "ceae",
-      "titulo": "cx",
-      "fecha": "24/03/2025, 15:42",
-      "calificacion": 3,
-      "categoria": "ropa-y-accesorios",
-      "estado": "Como Nuevo",
-      "descripcion": "xc",
-      "imgName": "uploads/fondo ice age.jpg"
-    }
+
   ]
 }
