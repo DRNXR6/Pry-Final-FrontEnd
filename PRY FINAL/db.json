@@ -1,50 +1,129 @@
 {
   "users": [
     {
-      "id": "acdc",
+      "id": "c012",
       "nombre": "Darien",
-      "email": "drn@gmail.com",
+      "email": "darien@gmail.com",
       "rol": "admin",
-      "contraseña": "123"
+      "contraseña": "123",
+      "publicacionesPosteadas": 0,
+      "favoritos": 0,
+      "calificacion": 0
     },
     {
-      "id": "90fe",
-      "nombre": "Maria",
-      "email": "marii@gmail.com",
+      "id": "dd12",
+      "nombre": "Andres",
+      "email": "darien@gmail.com",
       "rol": "usuario",
-      "contraseña": "123"
-    },
-    {
-      "id": "4f8e",
-      "nombre": "Sussana",
-      "email": "su@",
-      "rol": "usuario",
-      "contraseña": "123"
-    },
-    {
-      "id": "90a7",
-      "nombre": "Holaa",
-      "email": "@",
-      "rol": "usuario",
-      "contraseña": "123"
-    },
-    {
-      "id": "f983",
-      "nombre": "ds",
-      "email": "dsd@",
-      "rol": "usuario",
-      "contraseña": "cx"
-    },
-    {
-      "id": "1c87",
-      "nombre": "sd",
-      "email": "ds@",
-      "rol": "usuario",
-      "contraseña": "s"
+      "contraseña": "123",
+      "publicacionesPosteadas": 0,
+      "favoritos": 0,
+      "calificacion": 0
     }
   ],
   "comments": [],
   "publications": [
-
+    {
+      "id": "a56e",
+      "usuario": "Darien",
+      "titulo": "DRN",
+      "fecha": "26/03/2025, 11:00",
+      "calificacion": 0,
+      "categoria": "hogar",
+      "estado": "Nuevo",
+      "descripcion": "ds",
+      "imgName": "uploads/fondo ice age.jpg"
+    },
+    {
+      "id": "d238",
+      "usuario": "Darien",
+      "titulo": "ds",
+      "fecha": "26/03/2025, 11:00",
+      "calificacion": 0,
+      "categoria": "tecnologia",
+      "estado": "Como Nuevo",
+      "descripcion": "cx",
+      "imgName": "uploads/tommy and daly.jpg"
+    },
+    {
+      "id": "89bb",
+      "usuario": "Darien",
+      "titulo": "dsds",
+      "fecha": "26/03/2025, 11:48",
+      "calificacion": 0,
+      "categoria": "ropa-y-accesorios",
+      "estado": "Aceptable",
+      "descripcion": " ds",
+      "imgName": "uploads/Itchy.webp"
+    },
+    {
+      "id": "932e",
+      "usuario": "Andres",
+      "titulo": "cxcx",
+      "fecha": "26/03/2025, 12:56",
+      "calificacion": 0,
+      "categoria": "hogar",
+      "estado": "Como Nuevo",
+      "descripcion": "cxcx",
+      "imgName": "uploads/uwp4292656.jpeg"
+    }
+  ],
+  "sms": [
+    {
+      "id": "9f0e",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "932e"
+    },
+    {
+      "id": "4b36",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, noooo",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "4b36",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, noooo",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "9f0e",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "932e"
+    },
+    {
+      "id": "524e",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "d238"
+    },
+    {
+      "id": "ca87",
+      "usuario": "Darien",
+      "Remitente": "Darien",
+      "smsEnviar": "dfdf",
+      "IdItem": "d238"
+    },
+    {
+      "id": "31d2",
+      "usuario": "Darien",
+      "Remitente": "Darien",
+      "smsEnviar": "dfdfffd",
+      "IdItem": "d238"
+    },
+    {
+      "id": "8ca9",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "932e"
+    }
   ]
 }

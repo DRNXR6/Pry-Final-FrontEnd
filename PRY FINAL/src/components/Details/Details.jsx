@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import publicaciones from '../services/publicaciones';
+import SMS from '../services/SMS';
+
 import "./Details.css"
 import Swal from 'sweetalert2'
+import { useNavigate } from 'react-router-dom';
 
 function Details() {
 
-
+    const navigate = useNavigate()
+    
     const IdItem = JSON.parse(localStorage.getItem("IdItem"));
+    const Remitente = JSON.parse(localStorage.getItem("usuarioActual"));
+
     const [Publications, SetPublications]=useState([])
     const [Calif, SetCalif]=useState()
+    const smsDefault = "Hola, ¿Podrías darme más información?"
+
+    const [valueSMS, SetvalueSMS]=useState()
+
+    function FNValueSMS(evento) {
+        SetvalueSMS(evento.target.value)
+    }
 
     let calificacion = "";
 
@@ -97,6 +110,43 @@ function Details() {
 
     }
 
+    function chatear() {
+
+        Publications.map((publicationDetails) => {
+
+      
+            
+            if(publicationDetails.id == IdItem) {
+                
+                console.log(publicationDetails.usuario);
+                console.log(Remitente);
+                console.log(IdItem);
+                
+                localStorage.setItem("UserOwner", JSON.stringify(publicationDetails.usuario))
+                
+
+                let smsEnviar = "";
+
+                if(valueSMS == undefined || valueSMS.trim() == "") {
+                    smsEnviar = smsDefault;
+                }
+                else {
+                    smsEnviar = valueSMS;
+                }
+                
+                console.log(smsEnviar);
+
+                SMS.postSms(publicationDetails.usuario,Remitente,smsEnviar,IdItem)
+            }
+            
+        })
+
+        // if(valueSMS == "") {
+        //     smsDefault
+        // }
+
+        navigate("/chatPage")
+    }
 
   return (
     <div>       
@@ -123,7 +173,7 @@ function Details() {
 
                                     <div className="calificacion">
                                     
-                                        <p className='stars'> {calificacion}</p>
+                                        {/* <p className='stars'> {calificacion}</p> */}
                                     </div>
 
                                     <div className="actions">
@@ -149,14 +199,15 @@ function Details() {
                                     <p>Envía un mensaje al propietario para negociar</p>
 
                                     <div className="SendSms">
-                                        <input type="text" placeholder="Hola, ¿Podrías darme más información?" />
-                                        <button>Enviar</button>
+                                        <input type="text" value={valueSMS} onChange={FNValueSMS} placeholder={smsDefault} />
+                                        <button onClick={chatear} >Enviar</button>
                                     </div>
                                 </div>
 
-                                <div className="ubicacionDetails">
-                                    <p>Ubicación</p>
-                                    {/* <p>{publication.ubicacion}</p> */}
+                                <div className="UserDetail">
+                                    <p>Vendedor: </p>
+                                    <hr />
+                                    <p> {publication.usuario}</p>
                                 </div>
 
                             </section>

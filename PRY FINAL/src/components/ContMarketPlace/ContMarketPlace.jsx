@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import publicaciones from "../services/publicaciones";
+import llamados from '../services/llamados.js'
+
 import Swal from 'sweetalert2';
 
 function ContMarketPlace() {
@@ -14,6 +16,9 @@ function ContMarketPlace() {
     //   useEffect(() => {
     //     console.log("El estado refresh ha cambiado:", refresh);
     // }, [refresh]);
+
+    const UsuarioIngresado = JSON.parse(localStorage.getItem("usuarioActual"));
+    const [Users, SetUsers] = useState([]);
 
     const [Publications, SetPublications] = useState([]);
 
@@ -26,27 +31,34 @@ function ContMarketPlace() {
 
     const [AlternarContenedores, setAlternarContenedores] = useState(true);
     let imgUrl = "";
+    let countPublications = 0;
+
+    const [ContadorPublic, SetContadorPublic] = useState()
 
 
     const navigate = useNavigate();
 
     useEffect(() => {
+      async function fetchDataUsers() {
+          const Datos = await llamados.getUsers();
+          SetUsers(Datos);
+      };
+
+      fetchDataUsers()
+
+      
+  }, []);
+
+    useEffect(() => {
         async function fetchDataUsers() {
-            const Datos = await publicaciones.getPublications();
-            SetPublications(Datos);
+            const Datos2 = await publicaciones.getPublications();
+            SetPublications(Datos2);
         };
 
         fetchDataUsers()
 
         
     }, []);
-
-
-    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-
-    const toggleDropdown = () => {
-        setIsDropdownVisible(prevState => !prevState);
-    };
     
     const [IsDroProfilVisible, setIsDroProfilVisible] = useState(false);
 
@@ -56,6 +68,30 @@ function ContMarketPlace() {
       setIsDroProfilVisible(prevState => !prevState);
     };
 
+    function exit() {
+
+      Swal.fire({
+        title: "Cerrar sesión?",
+        text: "",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Aceptar!"
+
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+          navigate("/login")
+            // location.reload()
+
+            // history.pushState(null, null, window.location.href);
+            // history.back();
+            // history.forward();
+        }
+    })
+
+    }
 
     function FunctionDetails(id) {
         setTimeout(() => {
@@ -98,29 +134,41 @@ function ContMarketPlace() {
       }
     };
 
+
+
     function bntPublic() {
       
       let [nameIMG, extIMG] = image.name.split("."); 
 
-      let NameImgComplete = image.name;
 
       let NameImg = nameIMG;
       let ExtImg = extIMG;
-
-      console.log("NameImg " + NameImg);
-      console.log("ExtImg " + ExtImg);
-      console.log("NameImgComplete " + NameImgComplete)
 
       let IMGExistente = false;
       let counterExist = false;
 
       let counter = 1;
       let NewCounter = 1;
- 
+
+      // async function postUsers(nombre,email,rol,contraseña,publicacionesPosteadas,favoritos,calificacion) {
+
+
+
+
+      let contador = 0;
+
+      for (let index = 1; index < Publications.length; index++) {
+        const element = Publications[index];
+        console.log(element);
+
+
+
+      }
 
 
       Publications.map((publication) => {
-        
+  
+
         if (publication.imgName.includes(image.name) && publication.imgName.includes("(")) {    //Con (n)
           
           let [nameCounter, counterE] = publication.imgName.split("("); 
@@ -143,6 +191,23 @@ function ContMarketPlace() {
           IMGExistente = true;
 
         }
+
+
+        Users.map((User) => {
+
+
+          if(User.nombre == UsuarioIngresado) {
+
+            console.log(User.nombre);
+
+                 
+            
+            
+            llamados.updateUsers(User.nombre,User.email,User.rol,User.contraseña,contador,User.favoritos,User.calificacion)
+          }
+
+      }) 
+
 
       })
       
@@ -169,11 +234,10 @@ function ContMarketPlace() {
       let fecha = new Date().toLocaleString('es-ES', { hour12: false, second: '2-digit', minute: '2-digit', hour: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }).slice(0, -3);
       let calificacion = 0;
 
-      publicaciones.postPublications(titulo,fecha,calificacion, categoria, estado, descripcion, imgUrl);
+      publicaciones.postPublications(UsuarioIngresado,titulo,fecha,calificacion, categoria, estado, descripcion, imgUrl);
 
       
       // location.reload();
-      // setRefresh(prev => !prev);
   }
   
   function btnEdit(id) {
@@ -210,7 +274,7 @@ function ContMarketPlace() {
                 console.log(id);
                 
                 
-                publicaciones.updatePublications(Public.id, PublicEdit, Public.fecha,Public.calificacion, Public.categoria, Public.estado, Public.descripcion, Public.imgName);
+                publicaciones.updatePublications(Public.usuario,Public.id, PublicEdit, Public.fecha,Public.calificacion, Public.categoria, Public.estado, Public.descripcion, Public.imgName);
              
                 location.reload();
               }
@@ -267,13 +331,13 @@ function ContMarketPlace() {
     })
 
 
-    await fetch('http://localhost:3001/delete-image', {
-      method: 'DELETE',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ imageName: 'mi-imagen.jpg' }),
-    });
+    // await fetch('http://localhost:3001/delete-image', {
+    //   method: 'DELETE',
+    //   headers: {
+    //       'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({ imageName: 'mi-imagen.jpg' }),
+    // });
   
 
 
@@ -300,6 +364,10 @@ function ContMarketPlace() {
                       <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
                   </svg>
    
+                  <svg onClick={exit} xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="white" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                    <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                  </svg>
                 </div>
             </nav>
 
@@ -418,7 +486,7 @@ function ContMarketPlace() {
                               <p className="flex flex-col">
                                   Publicaciones
                                   <span className="state-value">
-                                      34
+                                      {countPublications}
                                   </span>
                               </p>
                               <p className="flex">

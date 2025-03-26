@@ -77,7 +77,11 @@ function FormRegister() {
   
         else {
           let rol = "usuario"
-          llamados.postUsers(nombreUsuario, EmailUsuario, rol, passwordUsuario)
+          let publicacionesPosteadas = 0;
+          let favoritos = 0;
+          let calificacion = 0;
+
+          llamados.postUsers(nombreUsuario, EmailUsuario, rol, passwordUsuario, publicacionesPosteadas, favoritos, calificacion)
   
   
           setTimeout(() => {

@@ -36,14 +36,16 @@
 .dropdown-center .btn:hover {
   background-color: gray;
 }
-/* 
-.ContProfil svg {
-    margin-right: 10px;
-} */
 
-/* .Profil {
+.ContProfil svg{
+  margin-left: 10px;
+}
 
-} */
+.ContProfil svg:hover {
+  transform: scale(1.3);
+}
+
+
 
 .dropdown-menu {
 

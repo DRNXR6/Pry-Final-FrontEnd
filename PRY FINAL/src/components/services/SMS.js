@@ -1,6 +1,6 @@
-async function getPublications() {
+async function getSms() {
     try {
-        const response = await fetch('http://localhost:3000/publications', {
+        const response = await fetch('http://localhost:3000/sms', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -8,13 +8,13 @@ async function getPublications() {
         });
 
         if (!response.ok) {
-            throw new Error('Error fetching publications');
+            throw new Error('Error fetching sms');
         }
 
-        const publications = await response.json();
-        return publications;
+        const sms = await response.json();
+        return sms;
     } catch (error) {
-        console.error('Error fetching publications:', error);
+        console.error('Error fetching sms:', error);
         throw error;
     }
 }
@@ -22,24 +22,19 @@ async function getPublications() {
 
 //////////LLAMADO POST//////////
 
-async function postPublications(usuario,titulo,fecha,calificacion,categoria,estado,descripcion,imgName) {
+async function postSms(usuario,Remitente,smsEnviar,IdItem) {
     try {
      
         const publicationData = {
             usuario,
-            titulo,
-            fecha,
-            calificacion,
-            categoria,
-            estado,
-            descripcion,
-            imgName
-           
+            Remitente,
+            smsEnviar,
+            IdItem
         };
 
 
 
-        const response = await fetch("http://localhost:3000/publications", {
+        const response = await fetch("http://localhost:3000/sms", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -61,27 +56,22 @@ async function postPublications(usuario,titulo,fecha,calificacion,categoria,esta
 //////////////LLAMADO UPDATE/////////////
 
 
-async function updatePublications(usuario,id,titulo,fecha,calificacion,categoria,estado,descripcion,imgName) 
+async function updateSms(usuario,Remitente,smsEnviar,IdItem,id)
 {
     try {
      
         const publicationData = {
             usuario,
-            titulo,
-            fecha,
-            calificacion,
-            categoria,
-            estado,
-            descripcion,
-            imgName
-        
+            Remitente,
+            smsEnviar,
+            IdItem
         };
 
 
         
 
 
-        const response = await fetch("http://localhost:3000/publications/"+id, {
+        const response = await fetch("http://localhost:3000/sms/"+id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -103,9 +93,9 @@ async function updatePublications(usuario,id,titulo,fecha,calificacion,categoria
 //////////////LLAMADO DELETE/////////////
 
 
-async function deletePublications(id) {
+async function deleteSms(id) {
     try {
-        const response = await fetch(`http://localhost:3000/publications/${id}`, {
+        const response = await fetch(`http://localhost:3000/sms/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -123,4 +113,4 @@ async function deletePublications(id) {
     }
 }
 
-export default { getPublications, postPublications, updatePublications, deletePublications };
+export default { getSms, postSms, updateSms, deleteSms };

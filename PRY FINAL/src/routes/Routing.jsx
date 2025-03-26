@@ -10,6 +10,7 @@ import Contacto from '../pages/contacto';
 import MarketPlace from '../pages/MarketPlace';
 import DetailsPage from '../pages/DetailsPage';
 import Edit from '../pages/Edit';
+import ChatPage from '../pages/ChatPage';
 
 
 function Routing() {
@@ -27,10 +28,9 @@ function Routing() {
             
             <Route path="/MarketPlace" element={<MarketPlace/>}/>
             <Route path="/edit" element={<Edit/>}/>
-
-
-          
             <Route path="/details" element={<DetailsPage/>}/>
+            <Route path="/chatPage" element={<ChatPage/>}/>
+
 
         </Routes>
       </Router>

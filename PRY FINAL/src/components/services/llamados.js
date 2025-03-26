@@ -22,14 +22,17 @@ async function getUsers() {
 
 //////////LLAMADO POST//////////
 
-async function postUsers(nombre,email,rol,contraseña) {
+async function postUsers(nombre,email,rol,contraseña,publicacionesPosteadas,favoritos,calificacion) {
     try {
      
         const userData = { 
             nombre,
             email,
             rol,
-            contraseña        
+            contraseña,
+            publicacionesPosteadas,
+            favoritos,
+            calificacion   
         };
 
 
@@ -56,7 +59,7 @@ async function postUsers(nombre,email,rol,contraseña) {
 //////////////LLAMADO UPDATE/////////////
 
 
-async function updateUsers(nombre,email,rol,contraseña,id) 
+async function updateUsers(nombre,email,rol,contraseña,publicacionesPosteadas,favoritos,calificacion,id)
 {
     try {
      
@@ -64,8 +67,10 @@ async function updateUsers(nombre,email,rol,contraseña,id)
             nombre,
             email,
             rol,
-            contraseña
-        
+            contraseña,
+            publicacionesPosteadas,
+            favoritos,
+            calificacion   
         };
 
 
