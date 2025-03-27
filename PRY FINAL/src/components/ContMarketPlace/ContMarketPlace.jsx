@@ -22,6 +22,7 @@ function ContMarketPlace() {
 
     const [Publications, SetPublications] = useState([]);
 
+
     const [image, setImage] = useState(null);
     const [message, setMessage] = useState('');
     const [titulo, setTitulo] = useState('');
@@ -35,9 +36,9 @@ function ContMarketPlace() {
 
     const [ContadorPublic, SetContadorPublic] = useState()
 
-
     const navigate = useNavigate();
-
+    const [valueSearch, SetValueSearch] = useState("");
+    
     useEffect(() => {
       async function fetchDataUsers() {
           const Datos = await llamados.getUsers();
@@ -53,6 +54,7 @@ function ContMarketPlace() {
         async function fetchDataUsers() {
             const Datos2 = await publicaciones.getPublications();
             SetPublications(Datos2);
+
         };
 
         fetchDataUsers()
@@ -63,10 +65,23 @@ function ContMarketPlace() {
     const [IsDroProfilVisible, setIsDroProfilVisible] = useState(false);
 
     const mostrarProfil = () => {
-      console.log("Mostrar perfil");
       
       setIsDroProfilVisible(prevState => !prevState);
     };
+
+    function FNValueSearch(evento) {
+      SetValueSearch(evento.target.value)
+    }
+
+    // Filtrar publicaciones por título
+    
+    const filteredConsultas = Publications.filter((consulta) =>
+      
+      consulta.titulo.toUpperCase().includes(valueSearch.toUpperCase()) || consulta.categoria.toUpperCase().includes(valueSearch.toUpperCase()) ||  consulta.descripcion.toUpperCase().includes(valueSearch.toUpperCase())
+
+    );
+
+
 
     function exit() {
 
@@ -157,13 +172,7 @@ function ContMarketPlace() {
 
       let contador = 0;
 
-      for (let index = 1; index < Publications.length; index++) {
-        const element = Publications[index];
-        console.log(element);
 
-
-
-      }
 
 
       Publications.map((publication) => {
@@ -245,9 +254,9 @@ function ContMarketPlace() {
     Swal.fire({
       title: 'Editar Publicación',
       html: `
-          
+         
           <textarea id="PublicEdit" class="swal2-textarea" placeholder="Nuevo titulo"></textarea>
-          
+
       `,
       confirmButtonText: 'Enviar',
       showCancelButton: true,
@@ -343,6 +352,9 @@ function ContMarketPlace() {
 
   }
 
+  function btnChat() {
+    navigate("/chatPage")
+  }
 
   const btnCambiarContenedores = () => {
     setAlternarContenedores(!AlternarContenedores);
@@ -357,9 +369,14 @@ function ContMarketPlace() {
                   {AlternarContenedores} Publicar
                 </button>
 
-                <input type="search" name="" placeholder='Buscar producto' id="" />
+                <input type="search" value={valueSearch} onChange={FNValueSearch} placeholder='Buscar producto' id="" />
 
                 <div className="ContProfil">
+                  <svg onClick={btnChat} xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+                    <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+
                   <svg onClick={mostrarProfil} xmlns="http://www.w3.org/2000/svg" width="37" height="37" fill="white" class="bi bi-person" viewBox="0 0 16 16">
                       <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
                   </svg>
@@ -376,7 +393,7 @@ function ContMarketPlace() {
             {AlternarContenedores && (
 
               <main className='ContIPublications'>
-                  {Publications.map((publication, index) => (
+                  {filteredConsultas.map((publication, index) => (
                       <article key={index}>
                           <div className="ItemCard">
                               <img onClick={() => FunctionDetails(publication.id)} className="imgCard" src={publication.imgName} alt="" />
@@ -401,7 +418,10 @@ function ContMarketPlace() {
                               </footer>
                           </div>
                       </article>
-                  ))}
+                ))}
+
+              {filteredConsultas.length === 0 && <p>No se encontraron resultados.</p>}
+
               </main>
             )}
 
@@ -459,10 +479,6 @@ function ContMarketPlace() {
                   <button onClick={bntPublic} type="submit" className="submit-button">Publicar</button>
                 </form>
                 
-
-
-
-
               </div>
 
             </div>
@@ -503,7 +519,8 @@ function ContMarketPlace() {
              
           </div>
 
-          
+
+
         </section>
     );
 }

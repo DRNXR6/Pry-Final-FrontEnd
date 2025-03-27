@@ -163,7 +163,6 @@ function Details() {
                         <section className="ItemCardDetails">
                             
                             <div className="imgCardDetails">
-
                                 <img className='imgDetails' src={publication.imgName} alt="" />
                             </div>
 

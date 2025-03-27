@@ -24,17 +24,6 @@
   "comments": [],
   "publications": [
     {
-      "id": "a56e",
-      "usuario": "Darien",
-      "titulo": "DRN",
-      "fecha": "26/03/2025, 11:00",
-      "calificacion": 0,
-      "categoria": "hogar",
-      "estado": "Nuevo",
-      "descripcion": "ds",
-      "imgName": "uploads/fondo ice age.jpg"
-    },
-    {
       "id": "d238",
       "usuario": "Darien",
       "titulo": "ds",
@@ -46,26 +35,26 @@
       "imgName": "uploads/tommy and daly.jpg"
     },
     {
-      "id": "89bb",
       "usuario": "Darien",
-      "titulo": "dsds",
+      "titulo": "22",
       "fecha": "26/03/2025, 11:48",
       "calificacion": 0,
       "categoria": "ropa-y-accesorios",
       "estado": "Aceptable",
       "descripcion": " ds",
-      "imgName": "uploads/Itchy.webp"
+      "imgName": "uploads/Itchy.webp",
+      "id": "89bb"
     },
     {
-      "id": "932e",
       "usuario": "Andres",
-      "titulo": "cxcx",
+      "titulo": "66",
       "fecha": "26/03/2025, 12:56",
       "calificacion": 0,
       "categoria": "hogar",
       "estado": "Como Nuevo",
       "descripcion": "cxcx",
-      "imgName": "uploads/uwp4292656.jpeg"
+      "imgName": "uploads/uwp4292656.jpeg",
+      "id": "932e"
     }
   ],
   "sms": [
@@ -74,56 +63,98 @@
       "usuario": "Darien",
       "Remitente": "Andres",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "932e"
-    },
-    {
-      "id": "4b36",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "Hola, noooo",
       "IdItem": "89bb"
     },
     {
       "id": "4b36",
       "usuario": "Andres",
       "Remitente": "Darien",
-      "smsEnviar": "Hola, noooo",
+      "smsEnviar": "Hola, 2",
       "IdItem": "89bb"
     },
     {
-      "id": "9f0e",
+      "id": "4b76",
       "usuario": "Darien",
       "Remitente": "Andres",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "932e"
+      "smsEnviar": "Podriamos chatear por aquí?",
+      "IdItem": "89bb"
     },
     {
-      "id": "524e",
+      "id": "990e",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Esta bien!",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "d9c9",
       "usuario": "Darien",
       "Remitente": "Andres",
+      "smsEnviar": "Hola, ¿Podrías s más información?",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "e5b1",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "Hola, ¿Podrías 11 más información?",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "341e",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "OOOOOKK",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "e5b1",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "Hola, ¿Podrías 11 más información?",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "e7e5",
+      "usuario": "Darien",
+      "Remitente": "Darien",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
       "IdItem": "d238"
     },
     {
-      "id": "ca87",
-      "usuario": "Darien",
-      "Remitente": "Darien",
-      "smsEnviar": "dfdf",
-      "IdItem": "d238"
-    },
-    {
-      "id": "31d2",
-      "usuario": "Darien",
-      "Remitente": "Darien",
-      "smsEnviar": "dfdfffd",
-      "IdItem": "d238"
-    },
-    {
-      "id": "8ca9",
+      "id": "4bb1",
       "usuario": "Andres",
       "Remitente": "Darien",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
       "IdItem": "932e"
+    },
+    {
+      "id": "ca0a",
+      "usuario": "Darien",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "d238"
+    },
+    {
+      "id": "402a",
+      "usuario": "Darien",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "f2b8",
+      "usuario": "Darien",
+      "Remitente": "Darien",
+      "smsEnviar": "ggg",
+      "IdItem": "89bb"
+    },
+    {
+      "id": "4f82",
+      "usuario": "Darien",
+      "Remitente": "Darien",
+      "smsEnviar": "ccx    ",
+      "IdItem": "d238"
     }
   ]
 }

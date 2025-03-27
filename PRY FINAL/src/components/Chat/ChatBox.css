@@ -8,65 +8,75 @@
 
 .card {
     margin: auto;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.548);
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
   
   .chat-header {
-    background-color: #333;
+    background-color: darkcyan;
     color: #fff;
-    padding: 10px;
+    padding: 5px 10px 5px 10px;
     font-size: 18px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-  }
-  
-  .chat-window {
-    height: 150px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .DivReceptor {
-    padding: 70px 20px 20px 0;
     display: flex;
-    flex-direction: column;
-    align-items: end;
-    background-color: red;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .chat-header p {
+    position: relative;
+    top: 7px;
+  }
+
+  .headerChat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  svg:hover {
+    transform: scale(1.3);
+  }
+
+  .chat-window {
+    height: 500px;
+    width: 500px;
+    overflow: auto;
+    padding: 30px 10px;
   }
 
   .Box {
-    border: solid;
-    width: 90%;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px; 
+    padding: 5px;
+    width: 50%;
+
   }
+
 
   .smsReceptor {
-    margin-bottom: 50px;
-
+    background-color: rgb(212, 208, 208);
+    float: left;
+    margin: 5px;
   }
-
-  .DivRemitente {
-    padding: 20px 20px 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    background-color: blue;
-
-  }
-
+  
   .smsRemitente {
-    margin-bottom: 50px;
+    background-color: lightblue;
+    float: right;
+    margin: 5px;
+
+
   }
+  
   
   .chat-input {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     border-top: 1px solid #ccc;
+
   }
   
   .message-input {
@@ -80,7 +90,7 @@
   .send-button {
     border: none;
     outline: none;
-    background-color: #333;
+    background-color: darkcyan;
     color: #fff;
     font-size: 14px;
     padding: 5px 10px;
