@@ -11,6 +11,7 @@ import MarketPlace from '../pages/MarketPlace';
 import DetailsPage from '../pages/DetailsPage';
 import Edit from '../pages/Edit';
 import ChatPage from '../pages/ChatPage';
+// import GoodsAndServicesPage from '../pages/Goods AndServicesPage';
 
 
 function Routing() {
@@ -30,6 +31,8 @@ function Routing() {
             <Route path="/edit" element={<Edit/>}/>
             <Route path="/details" element={<DetailsPage/>}/>
             <Route path="/chatPage" element={<ChatPage/>}/>
+            {/* <Route path="/GoodsAndServicesPage" element={<GoodsAndServicesPage/>}/> */}
+
 
 
         </Routes>

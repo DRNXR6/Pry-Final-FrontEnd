@@ -5,6 +5,7 @@ function MarketPlace() {
   return (
     <div>
       <ContMarketPlace/>
+
     </div>
   )
 }

@@ -58,13 +58,13 @@
 
   .smsReceptor {
     background-color: rgb(212, 208, 208);
-    float: left;
+    float: right;
     margin: 5px;
   }
   
   .smsRemitente {
     background-color: lightblue;
-    float: right;
+    float: left;
     margin: 5px;
 
 

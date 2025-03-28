@@ -11,12 +11,6 @@ import Swal from 'sweetalert2';
 
 function ContMarketPlace() {
 
-    //   const [refresh, setRefresh] = useState(false);
-      
-    //   useEffect(() => {
-    //     console.log("El estado refresh ha cambiado:", refresh);
-    // }, [refresh]);
-
     const UsuarioIngresado = JSON.parse(localStorage.getItem("usuarioActual"));
     const [Users, SetUsers] = useState([]);
 
@@ -72,8 +66,6 @@ function ContMarketPlace() {
     function FNValueSearch(evento) {
       SetValueSearch(evento.target.value)
     }
-
-    // Filtrar publicaciones por título
     
     const filteredConsultas = Publications.filter((consulta) =>
       
@@ -98,11 +90,6 @@ function ContMarketPlace() {
 
         if (result.isConfirmed) {
           navigate("/login")
-            // location.reload()
-
-            // history.pushState(null, null, window.location.href);
-            // history.back();
-            // history.forward();
         }
     })
 
@@ -164,8 +151,6 @@ function ContMarketPlace() {
 
       let counter = 1;
       let NewCounter = 1;
-
-      // async function postUsers(nombre,email,rol,contraseña,publicacionesPosteadas,favoritos,calificacion) {
 
 
 
@@ -245,8 +230,8 @@ function ContMarketPlace() {
 
       publicaciones.postPublications(UsuarioIngresado,titulo,fecha,calificacion, categoria, estado, descripcion, imgUrl);
 
-      
-      // location.reload();
+      //usar el useState para actualizar los cambios, recibiendo la respuesta del servidor del db.Json
+      location.reload();
   }
   
   function btnEdit(id) {
@@ -389,40 +374,45 @@ function ContMarketPlace() {
             </nav>
 
 
-
             {AlternarContenedores && (
 
-              <main className='ContIPublications'>
-                  {filteredConsultas.map((publication, index) => (
-                      <article key={index}>
-                          <div className="ItemCard">
-                              <img onClick={() => FunctionDetails(publication.id)} className="imgCard" src={publication.imgName} alt="" />
-                              
-                              <footer className="ItemFooter">
-                                <p className='pTitle'>{publication.titulo}</p>
+              <div>
+                <br />
+                <h2 className="h2">Todas las publicaciones</h2>
+                <main className='ContIPublications'>
+               
+                    {filteredConsultas.map((publication, index) => (
+                        <article key={index}>
+                            <div className="ItemCard">
+                                <img onClick={() => FunctionDetails(publication.id)} className="imgCard" src={publication.imgName} alt="" />
                                 
-                                <div className="ActionsCRUD">
+                                <footer className="ItemFooter">
+                                  <p className='pTitle'>{publication.titulo}</p>
                                   
-                                    <svg onClick={e => btnEdit(publication.id)} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                      <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                      <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                                    </svg>
+                                  <div className="ActionsCRUD">
+                                    
+                                      <svg onClick={e => btnEdit(publication.id)} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                                      </svg>
 
-                                    <svg onClick={e => btnDelete(publication.id)} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                      <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
-                                      <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
-                                    </svg>
+                                      <svg onClick={e => btnDelete(publication.id)} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                      </svg>
 
-                                </div>
+                                  </div>
 
-                              </footer>
-                          </div>
-                      </article>
-                ))}
+                                </footer>
+                            </div>
+                        </article>
+                  ))}
 
-              {filteredConsultas.length === 0 && <p>No se encontraron resultados.</p>}
+                {filteredConsultas.length === 0 && <p>No se encontraron resultados.</p>}
 
-              </main>
+                </main>
+
+              </div>
             )}
 
           {!AlternarContenedores && (
@@ -457,6 +447,8 @@ function ContMarketPlace() {
                       <option value="deportes">Deporte</option>
                       <option value="arte">Arte</option>
                       <option value="juguetes">Juguetes y entretenimiento</option>
+                      <option value="Otro">Otro</option>
+
                     </select>
                   </div>
 
@@ -483,6 +475,61 @@ function ContMarketPlace() {
 
             </div>
           )}
+
+            <section id='ContCategories'>
+              <article onClick={e => IrAProductos("tecnologia")} className="ItemCategory">
+                  <h1>Tecnología</h1>
+                  <img src="Tecnologia.webp" alt="" />
+              </article>
+
+              <article onClick={e => IrAProductos("hogar")} className="ItemCategory">
+                  <h1>Hogar</h1>
+                  <img src="Hogar.jpg" alt="" />
+
+              </article>
+
+              <article onClick={e => IrAProductos("RyP")} className="ItemCategory">
+                  <h1>Ropa y Accesorios</h1>
+                  <img src="RyA.jpg" alt="" />
+              </article>
+              
+              <article onClick={e => IrAProductos("herramientas")} className="ItemCategory">
+                  <h1>Herramientes</h1>
+                  <img src="Herramientas.jpg" alt="" />
+              </article>
+
+              <article onClick={e => IrAProductos("libros")} className="ItemCategory">
+                  <h1>Libros y más..</h1>
+                  <img src="LibrosyM.jfif" alt="" />
+              </article>
+
+              <article onClick={e => IrAProductos("servicios")} className="ItemCategory">
+                  <h1>Servicios</h1>
+                  <img src="Servicios.jpg" alt="" />
+              </article>
+
+              <article onClick={e => IrAProductos("deporte")} className="ItemCategory">
+                  <h1>Deporte</h1>
+                  <img src="Deporte.jpg" alt="" />
+
+              </article>
+
+              <article onClick={e => IrAProductos("arte")} className="ItemCategory">
+                  <h1>Arte</h1>
+                  <img src="Arte.avif" alt="" />
+              </article>
+
+              <article onClick={e => IrAProductos("juguetes")} className="ItemCategory">
+                  <h1>Juguetes y entretenimiento</h1>
+                  <img src="Juguetes.avif" alt="" />
+              </article>
+
+              <article onClick={e => IrAProductos("otro")} className="ItemCategory">
+                  <h1>Otro</h1>
+                  <img src="Otros.png" alt="" />
+              </article>
+          
+            </section>
 
 
           <div className="card2" style={{display: IsDroProfilVisible ? 'block' : 'none'}}

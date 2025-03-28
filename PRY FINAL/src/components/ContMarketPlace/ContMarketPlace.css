@@ -69,6 +69,53 @@
 
 
 
+
+
+
+
+#ContCategories {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 170px);
+  gap: 20px;
+  padding: 20px 100px;
+}
+
+.ItemCategory {
+
+  border: solid;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.ItemCategory:hover {
+  transform: scale(1.05);
+}
+
+
+.ItemCategory h1 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  padding: 0 15px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+  font-size: 25px;
+}
+
+.ItemCategory img {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
 .ItemBtnPublic {
     margin: 15px;
     background-color: darkcyan;
@@ -196,11 +243,9 @@
 
   }
   
-  h2 {
-    text-align: center;
-    color: #333;
-  }
+
   
+
   label {
     display: block;
     font-size: 16px;
@@ -388,3 +433,8 @@
 
 
 
+
+.h2 {
+  text-align: center;
+  background-color: rgba(13, 133, 133, 0.426);
+}
