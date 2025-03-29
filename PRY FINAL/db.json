@@ -19,6 +19,16 @@
       "publicacionesPosteadas": 0,
       "favoritos": 0,
       "calificacion": 0
+    },
+    {
+      "id": "aa98",
+      "nombre": "fffd",
+      "email": "dddds@",
+      "rol": "usuario",
+      "contraseña": "dds",
+      "publicacionesPosteadas": 0,
+      "favoritos": 0,
+      "calificacion": 0
     }
   ],
   "comments": [],

@@ -89,6 +89,7 @@ function ContMarketPlace() {
     }).then((result) => {
 
         if (result.isConfirmed) {
+          localStorage.clear()
           navigate("/login")
         }
     })
@@ -344,6 +345,12 @@ function ContMarketPlace() {
   const btnCambiarContenedores = () => {
     setAlternarContenedores(!AlternarContenedores);
   };
+
+  function IrAProductos(categoria) {
+    console.log(categoria);
+    localStorage.setItem("categoria", JSON.stringify(categoria));
+    navigate("/GoodsAndServicesPage")    
+  }
   
     return (
         <section>

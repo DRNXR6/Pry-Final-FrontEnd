@@ -7,10 +7,13 @@ import publicaciones from "../services/publicaciones.js";
 
 function GoodsAndServices() {
 
+  const categoria = JSON.parse(localStorage.getItem("categoria"));
+  const [Publications, SetPublications] = useState([])
+
     useEffect(() => {
         async function fetchDataUsers() {
-            const Datos2 = await publicaciones.getPublications();
-            SetPublications(Datos2);
+            const Datos = await publicaciones.getPublications();
+            SetPublications(Datos);
 
         };
 
@@ -20,19 +23,26 @@ function GoodsAndServices() {
     }, []);
     
 
-    function FunctionDetails(id) {
-        setTimeout(() => {
-            localStorage.setItem("IdItem", JSON.stringify(id));
-            navigate("/details");
-        }, 100);
-    }
+    // function FunctionDetails(id) {
+    //     setTimeout(() => {
+    //         localStorage.setItem("IdItem", JSON.stringify(id));
+    //         navigate("/details");
+    //     }, 100);
+    // }
 
 
     return (
         <section>
-          
 
-          
+          {Publications.map((publication, index) => (
+            
+            
+            <article key={index}>
+              {publication.titulo}
+            </article>
+
+          ))}
+       
         </section>
     );
 }
