@@ -55,8 +55,9 @@ function FormLogin() {
       // Redirigir según el rol
       if (encontrado.rol === 'admin') {
         navigate("/MarketPlace"); // Si el usuario es admin, lo redirigimos al MarketPlace
-      } else {
-        navigate("/"); // Si no es admin, lo redirigimos a la página de inicio
+      } 
+      else {
+        navigate("/MarketPlacePublic"); // Si no es admin, lo redirigimos a la página de inicio
       }
     }
   }

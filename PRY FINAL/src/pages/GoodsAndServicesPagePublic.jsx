@@ -1,10 +1,10 @@
 import React from 'react'
 import Navegacion from '../components/nav/Nav'
-import GoodsAndServices from '../components/Goods and Services/GoodsAndServices'
+import GoodsAndServices from '../components/Goods and Services/GoodsAndServicesPublic'
 import Footer from '../components/footer/Footer'
 
 
-function GoodsAndServicesPage() {
+function GoodsAndServicesPagePublic() {
   return (
     <div>
         <Navegacion/>
@@ -14,4 +14,4 @@ function GoodsAndServicesPage() {
   )
 }
 
-export default GoodsAndServicesPage
+export default GoodsAndServicesPagePublic

@@ -26,12 +26,16 @@ function Navegacion() {
 
         <ul>
           <li> <Link to="/"> <button className='btn'> Inicio </button> </Link> </li>
-          {/* <li> <Link to="/GoodsAndServicesPage"> <button className='btn'> Contáctenos </button> </Link> </li>   */}
-          <li> <Link to="/SobreWeb"> <button className='btn'> Sobre esta web</button> </Link> </li>
+          <li> <Link to="/GoodsAndServicesPagePublic"> <button className='btn'> Publicaciones </button> </Link> </li>  
+          <li> <Link to="/AboutWeb"> <button className='btnAbout'> Sobre esta web</button> </Link> </li>
           <li> <Link to="/contacto"> <button className='btn'> Contáctenos </button> </Link> </li>  
 
-          <li><button onClick={ARegistrarse} className='btnARegistrarse' >Registrase</button></li>
-          <li><button onClick={AiniciarSesion} className='btnAiniciarSesion' >Iniciar sesión</button></li>
+          <article>
+            
+            <li><button onClick={ARegistrarse} className='btnARegistrarse' >Registrase</button></li>
+            <li><button onClick={AiniciarSesion} className='btnAiniciarSesion' >Iniciar sesión</button></li>
+          </article>
+
         </ul>
 
         

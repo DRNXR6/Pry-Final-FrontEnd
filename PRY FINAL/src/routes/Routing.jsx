@@ -3,15 +3,19 @@
   import Login from '../pages/Login';
   import Register from '../pages/Register';
   import Home from '../pages/Home';
-  import SobreWeb from '../pages/SobreWeb';
+  import AboutWeb from '../pages/AboutWeb';
   import Contacto from '../pages/contacto';
   import MarketPlace from '../pages/MarketPlace';
+  import MarketPlacePublic from '../pages/MarketPlacePublic';
   import DetailsPage from '../pages/DetailsPage';
   import Edit from '../pages/Edit';
   import ChatPage from '../pages/ChatPage';
-  import GoodsAndServicesPage from '../pages/Goods AndServicesPage';
-  import PrivateRoute from '../components/PrivateRoute'; // Importamos el componente PrivateRoute
+  import GoodsAndServicesPagePublic from '../pages/GoodsAndServicesPagePublic';
+  import GoodsAndServicesPage from '../pages/GoodsAndServicesPage';
+  import GoodsAndServicesPageUser from '../pages/GoodsAndServicesPageUser';
 
+  import PrivateRoute from '../components/PrivateRoute';
+  
   function Routing() {
     return (
       <div>
@@ -19,34 +23,25 @@
           <Routes>
             {/* Rutas públicas */}
             <Route path="/" element={<Home />} />
-            <Route path="/SobreWeb" element={<SobreWeb />} />
+            <Route path="/GoodsAndServicesPagePublic" element={<GoodsAndServicesPagePublic />} />
+            <Route path="/GoodsAndServicesPageUser" element={<GoodsAndServicesPageUser />} />
+            <Route path="/AboutWeb" element={<AboutWeb />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
 
-            {/* Rutas protegidas con PrivateRoute */}
-            <Route
-              path="/edit"
-              element={<PrivateRoute element={<Edit />} />}
-            />
-            <Route
-              path="/details"
-              element={<PrivateRoute element={<DetailsPage />} />}
-            />
-            <Route
-              path="/chatPage"
-              element={<PrivateRoute element={<ChatPage />} />}
-            />
-            <Route
-              path="/GoodsAndServicesPage"
-              element={<PrivateRoute element={<GoodsAndServicesPage />} />}
-            />
-            <Route
-              path="/MarketPlace"
-              element={<PrivateRoute element={<MarketPlace />} />}
-            />
+            <Route path="/MarketPlacePublic" element={<MarketPlacePublic />} />
+            <Route path="/details" element={<DetailsPage />} />
 
-          </Routes>
+
+
+            {/* Rutas protegidas con PrivateRoute */}
+            <Route path="/edit" element={<PrivateRoute element={<Edit />} />}/>
+            <Route path="/chatPage"element={<PrivateRoute element={<ChatPage />} />}/>
+            <Route path="/GoodsAndServicesPage" element={<PrivateRoute element={<GoodsAndServicesPage />} />} />
+            <Route path="/MarketPlace" element={<PrivateRoute element={<MarketPlace />} />} />
+
+          </Routes> 
         </Router>
       </div>
     );

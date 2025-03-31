@@ -1,21 +1,16 @@
 import React from 'react'
 import Navegacion from '../components/nav/Nav'
-import SobreWebComp from '../components/about/About'
-
-
+import GoodsAndServices from '../components/Goods and Services/GoodsAndServices'
 import Footer from '../components/footer/Footer'
 
-function SobreWeb() {
+
+function GoodsAndServicesPage() {
   return (
     <div>
-        <Navegacion/>
-        
-        <SobreWebComp/>
-
+        <GoodsAndServices/>
         <Footer/>
     </div>
   )
 }
 
-export default SobreWeb
-
+export default GoodsAndServicesPage

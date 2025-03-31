@@ -29,201 +29,261 @@
       "publicacionesPosteadas": 0,
       "favoritos": 0,
       "calificacion": 0
+    },
+    {
+      "id": "3d04",
+      "nombre": "Gustavo",
+      "email": "fdgfhjh@gfhf.c",
+      "rol": "admin",
+      "contraseña": "123",
+      "publicacionesPosteadas": 0,
+      "favoritos": 0,
+      "calificacion": 0
+    },
+    {
+      "id": "8cf8",
+      "nombre": "D",
+      "email": "@",
+      "rol": "usuario",
+      "contraseña": "123",
+      "publicacionesPosteadas": 0,
+      "favoritos": 0,
+      "calificacion": 0
     }
   ],
-  "comments": [],
+  "comments": [
+    {
+      "id": "e9a0",
+      "nombre": "Dbjjd",
+      "email": "@@",
+      "comentario": "cx"
+    }
+  ],
   "publications": [
     {
-      "id": "6568",
-      "usuario": "Darien",
-      "titulo": "Fer",
-      "fecha": "28/03/2025, 13:56",
+      "usuario": "Andres",
+      "titulo": "Casco construcción",
+      "fecha": "31/03/2025, 15:18",
+      "calificacion": 0,
+      "categoria": "herramientas",
+      "estado": "Como Nuevo",
+      "descripcion": "Poco uso",
+      "imgName": "uploads/Herramientas2.jpg",
+      "id": "3f39"
+    },
+    {
+      "id": "f7e5",
+      "usuario": "Andres",
+      "titulo": "Laptop",
+      "fecha": "31/03/2025, 15:19",
+      "calificacion": 0,
+      "categoria": "tecnologia",
+      "estado": "Nuevo",
+      "descripcion": "laptop 2025",
+      "imgName": "uploads/laptop.jpg"
+    },
+    {
+      "id": "11d6",
+      "usuario": "Andres",
+      "titulo": "Pala",
+      "fecha": "31/03/2025, 15:20",
+      "calificacion": 0,
+      "categoria": "herramientas",
+      "estado": "Aceptable",
+      "descripcion": "Para sus cavaciones",
+      "imgName": "uploads/Herramientas.jpg"
+    },
+    {
+      "id": "5e5a",
+      "usuario": "Andres",
+      "titulo": "Conjunto",
+      "fecha": "31/03/2025, 15:20",
+      "calificacion": 0,
+      "categoria": "RyP",
+      "estado": "Nuevo",
+      "descripcion": "Cambio",
+      "imgName": "uploads/Ropa.jpg"
+    },
+    {
+      "id": "adef",
+      "usuario": "Andres",
+      "titulo": "Kit de Arte",
+      "fecha": "31/03/2025, 15:22",
+      "calificacion": 0,
+      "categoria": "arte",
+      "estado": "Nuevo",
+      "descripcion": "No lo uso por falta de tiempo.",
+      "imgName": "uploads/Arte.jpg"
+    },
+    {
+      "id": "2dde",
+      "usuario": "Andres",
+      "titulo": "Botines de futbol",
+      "fecha": "31/03/2025, 15:22",
+      "calificacion": 0,
+      "categoria": "deportes",
+      "estado": "Como Nuevo",
+      "descripcion": "Solo 2 veces lo usé.",
+      "imgName": "uploads/Deporte.jpg"
+    },
+    {
+      "id": "2673",
+      "usuario": "Andres",
+      "titulo": "Balón de futbol",
+      "fecha": "31/03/2025, 15:23",
+      "calificacion": 0,
+      "categoria": "deportes",
+      "estado": "Aceptable",
+      "descripcion": "Cambio por otra",
+      "imgName": "uploads/Deporte2.jpg"
+    },
+    {
+      "id": "04db",
+      "usuario": "Andres",
+      "titulo": "Servicio de UBER",
+      "fecha": "31/03/2025, 15:24",
+      "calificacion": 0,
+      "categoria": "otro",
+      "estado": "Aceptable",
+      "descripcion": "Viajes cómodos.",
+      "imgName": "uploads/Servicio.jpg"
+    },
+    {
+      "id": "8894",
+      "usuario": "Andres",
+      "titulo": "Pintura",
+      "fecha": "31/03/2025, 15:24",
+      "calificacion": 0,
+      "categoria": "arte",
+      "estado": "Nuevo",
+      "descripcion": "Cambio",
+      "imgName": "uploads/background6.jpg"
+    },
+    {
+      "id": "95d8",
+      "usuario": "Andres",
+      "titulo": "Oso de peluche",
+      "fecha": "31/03/2025, 15:47",
       "calificacion": 0,
       "categoria": "juguetes",
       "estado": "Nuevo",
-      "descripcion": "dds",
-      "imgName": "uploads/Granny.webp"
+      "descripcion": "Osito",
+      "imgName": "uploads/Juguete.webp"
     },
     {
-      "id": "5864",
-      "usuario": "Darien",
-      "titulo": "dsds",
-      "fecha": "28/03/2025, 15:38",
+      "id": "6ade",
+      "usuario": "Andres",
+      "titulo": "IPhone 16 pro max",
+      "fecha": "31/03/2025, 15:49",
       "calificacion": 0,
-      "categoria": "deportes",
+      "categoria": "tecnologia",
       "estado": "Nuevo",
-      "descripcion": "ds",
-      "imgName": "uploads/ice.jfif"
+      "descripcion": "Cambio por moto",
+      "imgName": "uploads/Tecnologia.jpg"
+    },
+    {
+      "id": "1ef1",
+      "usuario": "Andres",
+      "titulo": "Casco de moto",
+      "fecha": "31/03/2025, 15:50",
+      "calificacion": 0,
+      "categoria": "otro",
+      "estado": "Nuevo",
+      "descripcion": "Lo cambio porque no me gusta",
+      "imgName": "uploads/Otro.jpeg"
     }
   ],
   "sms": [
     {
-      "id": "9f0e",
+      "id": "d233",
       "usuario": "Darien",
       "Remitente": "Andres",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "89bb"
+      "IdItem": "27c5"
     },
     {
-      "id": "4b36",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "Hola, 2",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "4b76",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Podriamos chatear por aquí?",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "990e",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "Esta bien!",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "d9c9",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Hola, ¿Podrías s más información?",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "e5b1",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Hola, ¿Podrías 11 más información?",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "341e",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "OOOOOKK",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "e5b1",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Hola, ¿Podrías 11 más información?",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "e7e5",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "4bb1",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "932e"
-    },
-    {
-      "id": "ca0a",
-      "usuario": "Darien",
-      "Remitente": "Darien",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "d238"
-    },
-    {
-      "id": "402a",
-      "usuario": "Darien",
-      "Remitente": "Darien",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "f2b8",
-      "usuario": "Darien",
-      "Remitente": "Darien",
-      "smsEnviar": "ggg",
-      "IdItem": "89bb"
-    },
-    {
-      "id": "4f82",
-      "usuario": "Darien",
-      "Remitente": "Darien",
-      "smsEnviar": "ccx    ",
-      "IdItem": "d238"
-    },
-    {
-      "id": "9836",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Heeeyyy",
-      "IdItem": "d238"
-    },
-    {
-      "id": "773f",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "443",
-      "IdItem": "4b73"
-    },
-    {
-      "id": "7948",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "4b73"
-    },
-    {
-      "id": "1521",
+      "id": "34a5",
       "usuario": "Darien",
       "Remitente": "Andres",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "4b73"
+      "IdItem": "27c5"
     },
     {
-      "id": "15c1",
+      "id": "a13e",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "Holaa",
+      "IdItem": "27c5"
+    },
+    {
+      "id": "25d6",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "Soy aquel mae",
+      "IdItem": "27c5"
+    },
+    {
+      "id": "4f95",
       "usuario": "Darien",
       "Remitente": "Andres",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "4b73"
+      "IdItem": "a974"
     },
     {
-      "id": "15c1",
+      "id": "6974",
       "usuario": "Darien",
       "Remitente": "Andres",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "4b73"
+      "IdItem": "27c5"
     },
     {
-      "id": "ecc9",
+      "id": "8e51",
       "usuario": "Darien",
-      "Remitente": "Darien",
-      "smsEnviar": "rr",
-      "IdItem": "89bb"
+      "Remitente": "Andres",
+      "smsEnviar": "Maria",
+      "IdItem": "27c5"
     },
     {
-      "id": "b31c",
+      "id": "8aa1",
       "usuario": "Andres",
       "Remitente": "Darien",
-      "smsEnviar": "55",
-      "IdItem": "4b73"
+      "smsEnviar": "Maria",
+      "IdItem": "27c5"
     },
     {
-      "id": "7ecb",
-      "usuario": "Andres",
-      "Remitente": "Darien",
+      "id": "54d4",
+      "usuario": "Darien",
+      "Remitente": "Andres",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "4b73"
+      "IdItem": "27c5"
     },
     {
-      "id": "9b90",
-      "usuario": "Andres",
-      "Remitente": "Darien",
-      "smsEnviar": "eee",
-      "IdItem": "4b73"
+      "id": "3fd0",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "a974"
+    },
+    {
+      "id": "ef70",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "jnsd",
+      "IdItem": "a974"
+    },
+    {
+      "id": "e5b9",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "s",
+      "IdItem": "a974"
+    },
+    {
+      "id": "1887",
+      "usuario": "Darien",
+      "Remitente": "Andres",
+      "smsEnviar": "sss",
+      "IdItem": "a974"
     }
   ]
 }

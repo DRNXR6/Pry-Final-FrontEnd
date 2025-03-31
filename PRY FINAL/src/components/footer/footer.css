@@ -2,14 +2,52 @@
 .ContFooter {
     background-color: rgba(0, 0, 0, 0.788);
     color: whitesmoke;
+    display: grid;
+    grid-template:
+    "addres section" 80%
+    "footer footer" /
+     50% auto;
 }
 
-.Footer {
-    height: 60px;
-    font-family: "Lavishly Yours", cursive;
+.ContFooter address {
+    padding: 40px 0 0 40px;
+    grid-area: addres;
+}
+
+address p {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(90deg, #020024 0%, #090979 35%, #00d4ff 100%);
+    gap: 10px;
+    padding: 5px;
+    word-wrap: break-word;
+    overflow: hidden;
+
+}
+
+address svg {
+    min-width: 20px;
+}
+
+address a {
+    text-decoration: none;
+    word-wrap: break-word;
+
+}
+
+#ContRedes {
+    display: flex;
+    gap: 20px;
+}
+
+.ContFooter section {
+    padding: 40px;
+    grid-area: section;
+}
+
+#DivFooter {
+    margin-top: -30px;
+    text-align: center  ;
+    padding: 20px;
+    grid-area: footer;
 }
 

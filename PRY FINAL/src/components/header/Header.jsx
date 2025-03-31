@@ -6,18 +6,18 @@ function Header() {
   return (
     <div className="ContHeader">
         <header className="Header">
-          <p>"Intercambia lo que tienes, consigue lo que necesitas."</p>
+          <h3>"Intercambia lo que tienes,<br /> consigue lo que necesitas."</h3>
+          <p className='P1'> "Intercambia, no compres"</p>
+          <p className='P2'> "Cambia sin dinero"</p>
+          <p className='P3'> "Lo que tienes, lo que quieres"</p>
+          <p className='P4'> "Cambia, comparte, ahorra"</p>
+
         </header>
 
-        <div>
-          <p> ⁕ Intercambia, no compres.</p>
-          <p> ⁕ Cambia sin dinero.</p>
-          <p> ⁕ Lo que tienes, lo que quieres.</p>
-          <p> ⁕ Cambia, comparte, ahorra.</p>
-        </div>
+
       
   </div>
-  )
+  ) 
 }
 
 export default Header

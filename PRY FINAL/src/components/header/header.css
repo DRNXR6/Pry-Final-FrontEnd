@@ -3,31 +3,105 @@
 .Header {
     background:url(../assets/1.jpg);
     background-size: 100% 100%;
-    height: 456px;
+    height: 580px;
 }
 
-.Header p {
+.Header h3 {
     text-align: center;
     color: lightseagreen;
-    width: 400px;
+    display: inline-block;
     font-size: 25px;
     line-height: 40px;
     position: relative;
-    left: 200px;
-    top: 100px;
-    padding: 10px;
-    border-radius: 20px;
+    left: 20%;
+    top: 30%;
+    padding: 15px;
+    border-radius: 50px 0 50px 0;
     background-color: rgba(0, 0, 0, 0.4);
-}  
+}   
 
-.ContHeader div {
-    background-color: lightseagreen;
+.Header p {
+    font-weight: bolder;
+}
+
+.P1 {
+    position: absolute;
+    left: 3%;
+    top: 27%;
+    color: yellowgreen;
+}
+
+.P2 {
+    position: absolute;
+    right: 25%;
+    top: 35%;
     color: black;
-    font-size: 20px;
-    font-family: "Pinyon Script", cursive;
-    font-weight: 400;
-    font-style: normal;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    background-color: rgba(245, 245, 245, 0.549);
+    border-radius: 20px 0 20px 0;
+    padding: 3px;
+} 
+
+.P3 {
+    position: absolute;
+    left: 7%;
+    bottom: 29%;
+    color: black;
+    color: yellowgreen;
+
+}
+
+.P4 {
+    position: absolute;
+    right: 15%;
+    bottom: 20%;
+    color: black;
+    background-color: rgba(31, 145, 198, 0.549);
+    border-radius: 20px 0 20px 0;
+    padding: 3px;
+}
+
+
+
+@media (max-width: 575px) {
+    .Header {
+        height: 400px;
+    }
+    .Header h3 {
+        transition: 0.3s;
+        position: relative;
+        left: 12%;
+        padding: 7px;
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 570px) and (max-width: 769px) {
+    
+    .Header {
+        height: 400px;
+    }
+    .Header h3 {
+        transition: 0.3s;
+        position: relative;
+        left: 12%;
+        padding: 10px;
+        font-size: 20px;
+
+    }
+    #contP p:nth-child(2) {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 989px) {
+    .Header h3 {
+        transition: 0.3s;
+        position: relative;
+        left: 15%;
+        padding: 15px;
+        font-size: 23px;
+    }
+    #contP p:nth-child(2) {
+        display: none;
+    }
 }

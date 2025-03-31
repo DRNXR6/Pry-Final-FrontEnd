@@ -1,6 +1,9 @@
 
 .ContForm {
   padding: 60px 0 46px 0;
+  background-color: rgba(73, 129, 130, 0.468);
+  height: 580px;
+
 }
 
 .form {
@@ -11,8 +14,9 @@
   gap: 10px;
   width: 30%;
   margin: auto;
-  background-color: rgba(165, 159, 159, 0.607);
   padding: 20px;
+  background-color: whitesmoke;
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
 }
@@ -30,10 +34,15 @@
 
 .form input {
   border: 1px solid rgb(219, 213, 213);
+  background-color: rgba(187, 187, 187, 0.484);
   padding: 0px 14px;
   border-radius: 8px;
   width: 90%;
   height: 50px;
+}
+
+.form input:focus {
+  box-shadow: 0 0 10px darkcyan;
 }
 
 .form textarea {
@@ -43,6 +52,8 @@
   resize: none;
   padding: 8px 14px;
   border: 1px solid rgb(219, 213, 213);
+  background-color: rgba(187, 187, 187, 0.484);
+
 }
 
 

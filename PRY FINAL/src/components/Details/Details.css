@@ -1,35 +1,73 @@
 
+
 .ItemCardDetails {
     width: 100%;
     display: flex;
     background-color: gray;
     padding: 50px;
-    gap: 50px;
+    gap: 0px;
+    line-height: 20px;
+
 }
 
 .HeaderDetails {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: right;
+    margin: 20px 0;
+    gap: 10px;
 }
 
 .stars {
     display: flex;
     gap: 5px;
     font-size: 20px;
+
 }
 
+.actions {
+    text-align: right;
+}
+
+
+.pCategoryDetails {
+    color: lightblue;
+    font-size: 17px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+
+}
+.pTitleDetails {
+    padding-left: 20px;
+    font-size: 25px;
+    word-wrap: break-word;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.imgCardDetails {
+    width: 60%;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
 .imgDetails {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 340px;
     object-fit: 100%;
     border-radius: 10px;
-    border: solid;
+    margin-bottom: 20px;
 }
+
+.pDateDetails {
+    margin: 0;
+    margin-top: -15px;
+    font-weight: bold;
+    padding-left: 20px;
+    text-align: right;
+}
+
 
 .ContPDetails {
     padding: 0 50px 50px 50px;
-    border: solid;
     width: 80%;
     border-radius: 10px;
     max-height: 500px;
@@ -39,13 +77,8 @@
 
 .ContPDetails p {
     word-wrap: break-word;
-    max-width: 500px;
 }
 
-.pDateDetails {
-    text-align: left;
-    margin-top: -10px;
-}
 
 .pStateDetails {
     text-align: left;
@@ -88,20 +121,27 @@
     background-color: darkcyan;
 }
 
-.pDescriptionDetails {
+/* .pDescriptionDetails {
     margin-top: -10px;
     border: solid 1px;
     border-left: none;
     border-right: none;
     text-align: left;
     padding: 10px;
+} */
+
+.pDescriptionDetails {
+    margin-top: -10px;
+    padding: 10px 20px;
+    background-color: darkgray;
+    border-radius: 5px;
 }
 
 .actions {
     display: flex;
     justify-content: right;
     margin: 20px 0;
-    gap: 10px   ;
+    gap: 10px;
 }
 
 .actions button {
@@ -118,4 +158,46 @@
 .actions button .actions svg:hover {
     transform: scale(1.3);
     cursor: pointer;
+}
+
+.UserDetail{
+    background-color: #055757;
+    border-radius: 30px;
+    padding: 10px 30px;
+    line-height: 10px;
+}
+
+.UserDetail div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.UserDetail button {
+    padding: 5px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 10px;
+}
+
+.UserDetail p {
+    color: whitesmoke;
+    font-size: 20px;
+
+}
+
+
+
+
+@media (max-width: 571px) {
+
+}
+
+@media (min-width: 572px) and (max-width: 769px) {
+}
+
+@media (min-width: 768px) and (max-width: 989px) {
+}
+
+@media (min-width: 990px) and (max-width: 1150px) {
 }
