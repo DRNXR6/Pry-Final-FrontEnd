@@ -39,7 +39,7 @@ function ChatBox() {
     function btnClose() {
         setTimeout(() => {
             
-            navigate("/MarketPlace")
+            navigate(-1)
         }, 300);
     }
     
@@ -48,43 +48,56 @@ function ChatBox() {
             TitleP = TITLE.titulo
     ))
 
-    console.log("UserReceptor: " + UserReceptor)
-    console.log("UserRemitente: " + UserRemitente)
+    function ChatDelete() {
 
+        let ListaID = []
 
-    async function ChatDelete() {
-
-        SmsDB.filter(DSMS => DSMS.IdItem == IdItem && DSMS.usuario == UserReceptor && DSMS.Remitente == UserRemitente).map((chatDeleteID) => (
+        for (let index = 0; index < SmsDB.length; index++) {
+            const element = SmsDB[index];
             
-            console.log(chatDeleteID.id)
-
-            // Swal.fire({
-            //     title: '¿Estás seguro de eliminar el chat?',
-            //     showCancelButton: true,
-            //     confirmButtonText: 'Eliminar',
-            //     cancelButtonText: 'Cancelar',
-            //     confirmButtonColor: '#FF0000',
-            //     cancelButtonColor: 'darkcyan',
-
-            // }).then((result) => {
-            //     if (result.isConfirmed) {
-            //         Swal.fire({
-            //             title: 'Consulta Eliminada',
-            //             icon: 'success',
-            //             showConfirmButton: false
-            //         })
-            //         setTimeout(() => {
-            //             SMS.deleteSms(IdItem)
-                           
-            //             location.reload()     
-
-            //         }, 600);
-      
-    
+                
+                if((element.usuario == UserReceptor && element.Remitente == UserRemitente) || (element.usuario == UserRemitente && element.Remitente == UserReceptor)) {
                     
-            //     }
-            // })
-        ))
+                    ListaID.push(element.id)
+                }
+            
+        }
+            
+            Swal.fire({
+                title: '¿Estás seguro de eliminar el chat?',
+                showCancelButton: true,
+                confirmButtonText: 'Eliminar',
+                cancelButtonText: 'Cancelar',
+                confirmButtonColor: '#FF0000',
+                cancelButtonColor: 'darkcyan',
+
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Eliminando chat',
+                        icon: 'success',
+                        showConfirmButton: false
+                    })
+    
+                    console.log(ListaID);
+                    
+                    for (let index = 0; index < ListaID.length; index++) {
+                        const element = ListaID[index];
+                        
+
+                        SMS.deleteSms(element)                        
+
+                    }
+    
+                    setTimeout(() => {
+                        
+                        location.reload()     
+                    }, 600);
+
+   
+                }
+            })
+        
 
     }
 
@@ -99,15 +112,24 @@ function ChatBox() {
 
     }
 
-    let hola = ""
-    SmsDB.map((UserChat) => (
+    // let hola = ""
+    // SmsDB.map((UserChat) => (
     
-        (UserChat.usuario == UserRemitente) && (
-            console.log(UserRemitente) 
-        )  
-    ))
+    //     (UserChat.usuario == UserRemitente) && (
+    //         hola = UserReceptor
+    //     )  
+    // ))
     
+    const uniqueUsers = [
+        ...new Map(SmsDB.map((item) => [item.usuario, item])).values()
+      ].filter((user) => user.usuario !== UserRemitente);
 
+    const [IsDroProfilVisible, setIsDroProfilVisible] = useState(false);
+
+    const VerSMS = () => {
+        
+        setIsDroProfilVisible(prevState => !prevState);
+    };
   return (
     <main>
         <aside id='aside'>
@@ -117,29 +139,19 @@ function ChatBox() {
                 </svg>
                 Chats
             </header>
-                {SmsDB.map((UserChat, index) => (
 
+            <div>
+                {uniqueUsers.map((UserChat, index) => (
                     <div key={index}>
 
-                        {UserChat.IdItem === IdItem && UserChat.usuario === UserReceptor && UserChat.Remitente === UserRemitente && (
-
-                            <article className="ItemUserChat">
-                                <p>{hola}</p>
-                            </article>
-                        )}
-
+                        <article  className="ItemUserChat">
+                            <p>{UserChat.usuario}</p>
+                        </article>
                     </div>
-
                 ))}
-
-
-
+            </div>
 
         </aside>
-
-
-
-
 
         <div id='ContSms'>
 
@@ -147,8 +159,6 @@ function ChatBox() {
                 <header class="chat-header">
                     <div className='headerChat'>
                         
-
-
                         <p>{UserReceptor} - {TitleP} </p>
                     </div>
 
@@ -158,15 +168,15 @@ function ChatBox() {
                     </svg>
                 </header>
 
-
-                <section className="chat-window">
+                 
+                <section className="chat-window" >
 
                     {SmsDB.map((sms, index) => (
 
                         <div key={index} id='ContChat'>
                             
 
-                                {sms.IdItem === IdItem && sms.usuario === UserReceptor && sms.Remitente === UserRemitente && (
+                                {sms.usuario === UserReceptor && sms.Remitente === UserRemitente && (
 
                                         <article className=" Box smsReceptor">
                                             <p>{sms.smsEnviar}</p>
@@ -174,7 +184,7 @@ function ChatBox() {
 
                                 )}
 
-                                {sms.IdItem === IdItem && sms.usuario === UserRemitente && sms.Remitente === UserReceptor && (
+                                {sms.usuario === UserRemitente && sms.Remitente === UserReceptor && (
 
                                 <article className=" Box smsRemitente">
                                     <p>{sms.smsEnviar}</p>

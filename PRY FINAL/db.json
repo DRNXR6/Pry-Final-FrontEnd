@@ -49,6 +49,16 @@
       "publicacionesPosteadas": 0,
       "favoritos": 0,
       "calificacion": 0
+    },
+    {
+      "id": "b3bc",
+      "nombre": "Diego",
+      "email": "a@",
+      "rol": "usuario",
+      "contraseña": "123",
+      "publicacionesPosteadas": 0,
+      "favoritos": 0,
+      "calificacion": 0
     }
   ],
   "comments": [
@@ -195,95 +205,151 @@
   ],
   "sms": [
     {
-      "id": "d233",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "27c5"
-    },
-    {
-      "id": "34a5",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "27c5"
-    },
-    {
-      "id": "a13e",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Holaa",
-      "IdItem": "27c5"
-    },
-    {
-      "id": "25d6",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Soy aquel mae",
-      "IdItem": "27c5"
-    },
-    {
-      "id": "4f95",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "a974"
-    },
-    {
-      "id": "6974",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "27c5"
-    },
-    {
-      "id": "8e51",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "Maria",
-      "IdItem": "27c5"
-    },
-    {
-      "id": "8aa1",
+      "id": "05b9",
       "usuario": "Andres",
       "Remitente": "Darien",
-      "smsEnviar": "Maria",
-      "IdItem": "27c5"
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "3f39"
     },
     {
-      "id": "54d4",
+      "id": "cd85",
+      "usuario": "Est",
+      "Remitente": "Diego",
+      "smsEnviar": "Hola, ¿Podrías darme más?",
+      "IdItem": "11d6"
+    },
+    {
+      "id": "df9d",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "4278",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "1b78",
       "usuario": "Darien",
       "Remitente": "Andres",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "27c5"
+      "IdItem": "3f39"
     },
     {
-      "id": "3fd0",
-      "usuario": "Darien",
-      "Remitente": "Andres",
+      "id": "1b78",
+      "usuario": "Andres",
+      "Remitente": "Darien",
       "smsEnviar": "Hola, ¿Podrías darme más información?",
-      "IdItem": "a974"
+      "IdItem": "3f39"
     },
     {
-      "id": "ef70",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "jnsd",
-      "IdItem": "a974"
+      "id": "43da",
+      "usuario": "Andres",
+      "Remitente": "Diego",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "2dde"
     },
     {
-      "id": "e5b9",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "s",
-      "IdItem": "a974"
+      "id": "47db",
+      "usuario": "Andres",
+      "Remitente": "Diego",
+      "smsEnviar": "Hola pues",
+      "IdItem": "2dde"
     },
     {
-      "id": "1887",
-      "usuario": "Darien",
-      "Remitente": "Andres",
-      "smsEnviar": "sss",
-      "IdItem": "a974"
+      "id": "1384",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "f7e5"
+    },
+    {
+      "id": "aeb2",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "g",
+      "IdItem": "f7e5"
+    },
+    {
+      "id": "b5fa",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "hhas",
+      "IdItem": "f7e5"
+    },
+    {
+      "id": "cf78",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "13ca",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "ccs",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "d414",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "c97f",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "3150",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "3186",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "sm,d,mds",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "ee6b",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "xccx",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "7291",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "cx",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "a9fa",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "cxc",
+      "IdItem": "3f39"
+    },
+    {
+      "id": "592c",
+      "usuario": "Andres",
+      "Remitente": "Darien",
+      "smsEnviar": "Hola, ¿Podrías darme más información?",
+      "IdItem": "3f39"
     }
   ]
 }

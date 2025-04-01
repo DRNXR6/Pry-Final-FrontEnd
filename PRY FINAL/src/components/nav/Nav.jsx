@@ -25,7 +25,7 @@ function Navegacion() {
         </div>
 
         <ul>
-          <li> <Link to="/"> <button className='btn'> Inicio </button> </Link> </li>
+          <li> <Link to="/" className='btn'> Inicio </Link> </li>
           <li> <Link to="/GoodsAndServicesPagePublic"> <button className='btn'> Publicaciones </button> </Link> </li>  
           <li> <Link to="/AboutWeb"> <button className='btnAbout'> Sobre esta web</button> </Link> </li>
           <li> <Link to="/contacto"> <button className='btn'> Contáctenos </button> </Link> </li>  

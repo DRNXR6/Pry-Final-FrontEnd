@@ -1,81 +1,76 @@
+
+// Importación de librerías y módulos necesarios
+
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 
+// Importación de librerías de Bootstrap y servicios
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import publicaciones from "../services/publicaciones";
 import llamados from '../services/llamados.js'
 
+// Importación de archivo de estilo y librería de alertas
 import "./ContMarketPlace.css";
 import Swal from 'sweetalert2';
 
 function ContMarketPlace() {
 
+      // Obtener el usuario actual desde el almacenamiento local
     const UsuarioIngresado = JSON.parse(localStorage.getItem("usuarioActual"));
+
     const [Users, SetUsers] = useState([]);
-
     const [Publications, SetPublications] = useState([]);
-
-
     const [image, setImage] = useState(null);
     const [message, setMessage] = useState('');
     const [titulo, setTitulo] = useState('');
     const [categoria, setCategoria] = useState('');
     const [estado, setEstado] = useState('');
     const [descripcion, setDescripcion] = useState('');
-
     const [AlternarContenedores, setAlternarContenedores] = useState(true);
 
+        // Estado para manejar la visibilidad del menú de perfil
+    const [IsDroProfilVisible, setIsDroProfilVisible] = useState(false);
+    const navigate = useNavigate();
+    const [valueSearch, SetValueSearch] = useState("");
+    
+    // Variables de utilidad
     let imgUrl = "";
     let countPublications = 0;
 
-    const [ContadorPublic, SetContadorPublic] = useState()
-
-    const navigate = useNavigate();
-    const [valueSearch, SetValueSearch] = useState("");
     
     useEffect(() => {
       async function fetchDataUsers() {
           const Datos = await llamados.getUsers();
           SetUsers(Datos);
+
+          const Datos2 = await publicaciones.getPublications();
+          SetPublications(Datos2);
       };
 
       fetchDataUsers()
 
-      
   }, []);
-
-    useEffect(() => {
-        async function fetchDataUsers() {
-            const Datos2 = await publicaciones.getPublications();
-            SetPublications(Datos2);
-
-        };
-
-        fetchDataUsers()
-
-        
-    }, []);
     
-    const [IsDroProfilVisible, setIsDroProfilVisible] = useState(false);
-
-    const mostrarProfil = () => {
-      
+    // Función para mostrar/ocultar el perfil
+    const mostrarProfil = () => { 
       setIsDroProfilVisible(prevState => !prevState);
     };
+
+    // Función que maneja el valor de búsqueda
 
     function FNValueSearch(evento) {
       SetValueSearch(evento.target.value)
     }
     
+      // Filtrar publicaciones según la búsqueda del usuario
     const filteredConsultas = Publications.filter((consulta) =>
       
       consulta.titulo.toUpperCase().includes(valueSearch.toUpperCase()) || consulta.categoria.toUpperCase().includes(valueSearch.toUpperCase()) ||  consulta.descripcion.toUpperCase().includes(valueSearch.toUpperCase())
 
     );
 
-
-
+    // Función para cerrar sesión
     function exit() {
 
       Swal.fire({
@@ -97,6 +92,7 @@ function ContMarketPlace() {
 
     }
 
+    // Función para ver detalles de una publicación
     function FunctionDetails(usuario, id) {
         setTimeout(() => {
             localStorage.setItem("IdItem", JSON.stringify(id));
@@ -106,11 +102,12 @@ function ContMarketPlace() {
         }, 100);
     }
 
-
+    // Función para la imagen
     const handleFileChange = (e) => {
       setImage(e.target.files[0]);
     };
-  
+
+    // Función para manejar el envío del formulario con la img
     const handleSubmit = async (e) => {
       e.preventDefault();
   
@@ -120,7 +117,7 @@ function ContMarketPlace() {
       }
   
       const formData = new FormData();
-      formData.append('image', image);
+      formData.append('image', image); // Agregar imagen al formulario
   
       try {
         const response = await fetch('http://localhost:3001/upload', {
@@ -135,37 +132,24 @@ function ContMarketPlace() {
           setMessage('Error al subir el archivo.');
         }
       } catch (error) {
-        console.error(error);
         setMessage('Error al subir el archivo.');
       }
     };
 
+    // Función para publicar un anuncio
 
-
-    function bntPublic() {
+    async function bntPublic() {
       
       let [nameIMG, extIMG] = image.name.split("."); 
-
-
       let NameImg = nameIMG;
       let ExtImg = extIMG;
-
       let IMGExistente = false;
       let counterExist = false;
-
       let counter = 1;
       let NewCounter = 1;
-
-
-
-
       let contador = 0;
 
-
-
-
       Publications.map((publication) => {
-  
 
         if (publication.imgName.includes(image.name) && publication.imgName.includes("(")) {    //Con (n)
           
@@ -190,7 +174,6 @@ function ContMarketPlace() {
 
         }
 
-
         Users.map((User) => {
 
 
@@ -198,35 +181,27 @@ function ContMarketPlace() {
 
             console.log(User.nombre);
 
-                 
-            
-            
             llamados.updateUsers(User.nombre,User.email,User.rol,User.contraseña,contador,User.favoritos,User.calificacion)
           }
 
       }) 
 
-
       })
       
       if(IMGExistente == true && counterExist == true){
-      
+    
         imgUrl = "uploads/" + NameImg + "(" + NewCounter + ")" + "." + ExtImg;
         console.log("imgUrl " + imgUrl);
-
       }
 
       else if (IMGExistente == true) {
-
         imgUrl ="uploads/" + NameImg + "(" + counter + ")" + "." + ExtImg;
         counter++;
 
       }
       else {
-
         imgUrl = "uploads/" + image.name
         counter++;
-
       }
 
       let fecha = new Date().toLocaleString('es-ES', { hour12: false, second: '2-digit', minute: '2-digit', hour: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }).slice(0, -3);
@@ -234,10 +209,10 @@ function ContMarketPlace() {
 
       publicaciones.postPublications(UsuarioIngresado,titulo,fecha,calificacion, categoria, estado, descripcion, imgUrl);
 
-      //usar el useState para actualizar los cambios, recibiendo la respuesta del servidor del db.Json
-      location.reload();
+      location.reload()
   }
   
+  // Función para editar una publicación
   function btnEdit(id) {
   
     Swal.fire({
@@ -294,7 +269,8 @@ function ContMarketPlace() {
 
   }
 
-  async function btnDelete(id) {
+  // Función para eliminar una publicación
+  function btnDelete(id) {
 
 
     Swal.fire({
@@ -325,33 +301,25 @@ function ContMarketPlace() {
             }, 100)
         }
     })
-
-
-    // await fetch('http://localhost:3001/delete-image', {
-    //   method: 'DELETE',
-    //   headers: {
-    //       'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({ imageName: 'mi-imagen.jpg' }),
-    // });
-  
-
-
   }
 
+  // Función para navegar al chat
   function btnChat() {
     navigate("/chatPage")
   }
 
+  // Función para cambiar entre los contenedores de publicación y lista de publicaciones
   const btnCambiarContenedores = () => {
     setAlternarContenedores(!AlternarContenedores);
   };
 
+  // Función para navegar a productos según la categoría
   function IrAProductos(categoria) {
     localStorage.setItem("categoria", JSON.stringify(categoria));
     navigate("/GoodsAndServicesPage")    
   }
   
+    // Renderizar la interfaz de usuario
     return (
         <section>
             <nav className="dropdown-center">
@@ -374,7 +342,7 @@ function ContMarketPlace() {
                     <ul class="dropdown-menu">
                       <li onClick={btnChat}>
                         <p class="dropdown-item">
-                          <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+                          <svg  xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="black" class="bi bi-chat-left-text" viewBox="0 0 16 16">
                             <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
                             <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
                           </svg>

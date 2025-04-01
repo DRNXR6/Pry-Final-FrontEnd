@@ -3,11 +3,17 @@
 .ItemCardDetails {
     width: 100%;
     display: flex;
-    background-color: gray;
+    background-color: rgb(153, 153, 153);
     padding: 50px;
     gap: 0px;
     line-height: 20px;
+    border-radius: 20px;    
+}
 
+.ItemCardDetails .svgg {
+    border: solid 1px;
+    padding: 0 5px;
+    border-radius: 10px;
 }
 
 .HeaderDetails {
@@ -121,14 +127,6 @@
     background-color: darkcyan;
 }
 
-/* .pDescriptionDetails {
-    margin-top: -10px;
-    border: solid 1px;
-    border-left: none;
-    border-right: none;
-    text-align: left;
-    padding: 10px;
-} */
 
 .pDescriptionDetails {
     margin-top: -10px;

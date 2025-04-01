@@ -37,7 +37,18 @@ address a {
 #ContRedes {
     display: flex;
     gap: 20px;
+
 }
+#ContRedes a {
+    padding: 0px;
+    height: 60px;
+}
+#ContRedes a:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+
 
 .ContFooter section {
     padding: 40px;

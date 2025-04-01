@@ -51,10 +51,25 @@
   transform: scale(1.3);
 }
 
+.dropdown-menu  {
+  background-color: gray;
+}
 
 .dropdown-menu p {
   display: flex;
   gap: 10px;
+  margin: 0;
+  padding: 0 30px;
+}
+
+.dropdown-menu p:hover {
+  background-color: rgb(71, 154, 169);
+
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-center input {
@@ -180,12 +195,13 @@
   position: relative;
   top: 9px;
   width: 60%;
+  height: 20px;
   overflow: hidden;
-
 }
 
 .ActionsCRUD {
   width: 30%;
+  height: 20px;
   display: flex;
   justify-content: space-between;
 }
@@ -357,7 +373,6 @@
 
 .info {
   width: 100%;
-  border: solid;
   padding: 20px;
 }
 
@@ -567,11 +582,6 @@
     width: 95%;
   }
 
-  .card2 {
-
-    background-color: yellow;
-
-  }
     
   .infos {
     width: 60%;

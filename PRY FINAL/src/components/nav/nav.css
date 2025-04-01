@@ -43,13 +43,20 @@ ul .btn {
 
 /* Estilos específicos para el botón "Sobre esta web" */
 .btnAbout {
-    background-color: transparent;
+
+    width: 130px;
+    border: none;
+    font-size: 17px;
     color: whitesmoke;
     border: 1px solid;
     border-radius: 5px;
-    width: 130px;
+    background-color: transparent;
     padding: 5px;
-    font-size: 17px;
+}
+
+.btn:hover {
+    background-color: red;
+    color: whitesmoke;
 }
 
 /* Estilos para el botón "Registrarse" */

@@ -22,9 +22,8 @@ async function getPublications() {
 
 //////////LLAMADO POST//////////
 
-async function postPublications(usuario,titulo,fecha,calificacion,categoria,estado,descripcion,imgName) {
+async function postPublications(usuario, titulo, fecha, calificacion, categoria, estado, descripcion, imgName) {
     try {
-     
         const publicationData = {
             usuario,
             titulo,
@@ -34,10 +33,7 @@ async function postPublications(usuario,titulo,fecha,calificacion,categoria,esta
             estado,
             descripcion,
             imgName
-           
         };
-
-
 
         const response = await fetch("http://localhost:3000/publications", {
             method: 'POST',
@@ -47,15 +43,20 @@ async function postPublications(usuario,titulo,fecha,calificacion,categoria,esta
             body: JSON.stringify(publicationData)
         });
 
-     
+        // Verificar si la respuesta es exitosa (status 2xx)
+        if (!response.ok) {
+            throw new Error('Error posting publication');
+        }
+
+        // Asegúrate de que el servidor devuelve JSON
         return await response.json();
 
-        
     } catch (error) {
         console.error('Error posting publication:', error);
         throw error;
     }
 }
+
 
 
 //////////////LLAMADO UPDATE/////////////
@@ -78,8 +79,7 @@ async function updatePublications(usuario,id,titulo,fecha,calificacion,categoria
         };
 
 
-        
-
+    
 
         const response = await fetch("http://localhost:3000/publications/"+id, {
             method: 'PUT',

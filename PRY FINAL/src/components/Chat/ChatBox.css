@@ -23,7 +23,8 @@ main {
 }
 .ItemUserChat {
   color: whitesmoke ;
-  border: solid;
+  border: none;
+  border-bottom: 0.1px solid gray;
 
   background-color: rgb(41, 40, 40);
   padding: 10px;
@@ -31,8 +32,14 @@ main {
   width: 99%;
 }
 
+.ItemUserChat:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+
 #ContSms {
   width: 60%;
+
 }
 .card {
     margin: auto;
@@ -64,11 +71,17 @@ main {
 
   
   .chat-window {
-    overflow: auto;
     padding: 30px;
     height: 375px;
+
   }
 
+  #ContChat {
+    min-height: 575px;
+
+
+  }
+  
   .Box {
     border-radius: 5px; 
     padding: 5px;
@@ -81,6 +94,7 @@ main {
     background-color: lightblue;
     float: right;
     margin: 5px;
+
   }
   
   .smsRemitente {

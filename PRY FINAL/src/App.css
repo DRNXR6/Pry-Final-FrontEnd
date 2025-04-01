@@ -5,3 +5,11 @@
 body{
   background-color: gray;
 }
+
+.btn:hover, .btnAbout:hover{
+  background-color: rgba(0, 139, 139, 0.558);
+  text-decoration: none;
+  color: whitesmoke;
+  border: none;
+}
+ 
